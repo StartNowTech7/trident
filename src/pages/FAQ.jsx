@@ -1,0 +1,92 @@
+import React, { useState, useEffect } from 'react';
+import PageHeader from '../components/PageHeader';
+import { ChevronDown } from 'lucide-react';
+
+import { supabase } from '../lib/supabase';
+import faqHeaderImg from '../assets/images/faq-header.jpg';
+
+const FAQ = () => {
+    const [openIndex, setOpenIndex] = useState(null);
+    const [faqs, setFaqs] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchFaqs = async () => {
+            const { data } = await supabase.from('faqs').select('*').order('order', { ascending: true });
+            if (data && data.length > 0) {
+                setFaqs(data);
+            } else {
+                // Fallback
+                setFaqs([
+                    {
+                        question: "What is a General Sales Agent (GSA)?",
+                        answer: "A GSA represents airlines in specific markets, handling passenger sales, marketing, and customer service on behalf of the airline."
+                    }
+                ]);
+            }
+            setLoading(false);
+        };
+        fetchFaqs();
+    }, []);
+
+    if (loading) return <div style={{ padding: '100px', textAlign: 'center' }}>Loading FAQ...</div>;
+
+    return (
+        <>
+            <PageHeader
+                title="FAQ"
+                subtitle="Frequently Asked Questions"
+                bgImage={faqHeaderImg}
+            />
+            <section style={{ padding: '80px 20px', backgroundColor: 'white' }}>
+                <div className="container" style={{ maxWidth: '900px' }}>
+                    <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+                        <h2 style={{ fontSize: '2.5rem', color: 'var(--color-primary)', marginBottom: '15px' }}>Common Questions</h2>
+                        <p style={{ color: '#666' }}>Find answers to frequently asked questions about our services.</p>
+                    </div>
+                    <div>
+                        {faqs.map((faq, index) => (
+                            <div key={index} style={{
+                                marginBottom: '20px',
+                                border: '1px solid #e5e7eb',
+                                borderRadius: '8px',
+                                overflow: 'hidden'
+                            }}>
+                                <div
+                                    onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                                    style={{
+                                        padding: '20px',
+                                        backgroundColor: openIndex === index ? 'var(--color-primary)' : 'white',
+                                        color: openIndex === index ? 'white' : 'var(--color-primary)',
+                                        cursor: 'pointer',
+                                        display: 'flex',
+                                        justifyContent: 'space-between',
+                                        alignItems: 'center',
+                                        fontWeight: '600',
+                                        transition: 'all 0.3s'
+                                    }}
+                                >
+                                    <span>{faq.question}</span>
+                                    <ChevronDown
+                                        size={20}
+                                        style={{
+                                            transform: openIndex === index ? 'rotate(180deg)' : 'rotate(0)',
+                                            transition: 'transform 0.3s'
+                                        }}
+                                    />
+                                </div>
+                                {openIndex === index && (
+                                    <div style={{ padding: '20px', backgroundColor: '#f9fafb', color: '#666', lineHeight: '1.8' }}>
+                                        {faq.answer}
+                                    </div>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+        </>
+    );
+};
+
+export default FAQ;

@@ -1,0 +1,215 @@
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(10, 61, 38, 0.25)),
+        url('../assets/images/hero-bg.jpg') center/cover;
+    display: flex;
+    align-items: center;
+    color: white;
+    position: relative;
+    padding: 140px 40px 0;
+    /* Consolidated padding with 140px top offset for fixed navbar */
+    overflow: hidden;
+}
+
+.hero-container {
+    max-width: var(--container-width);
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-left {
+    flex: 1.6;
+    max-width: 650px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(197, 160, 89, 0.2);
+    border: 1px solid var(--color-secondary);
+    padding: 8px 20px;
+    border-radius: 30px;
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+    color: var(--color-secondary);
+    font-weight: 500;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    line-height: 1.1;
+    color: white;
+}
+
+.hero-text {
+    font-size: 1.1rem;
+    margin-bottom: 35px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Floating Cards Styling */
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.cards-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: flex-end;
+}
+
+.floating-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px 25px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    min-width: 240px;
+    transition: all 0.3s;
+}
+
+.card-1 {
+    margin-right: 80px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.card-2 {
+    margin-right: 40px;
+    animation: float 6s ease-in-out infinite;
+    animation-delay: 2s;
+}
+
+.card-3 {
+    margin-right: 0px;
+    animation: float 6s ease-in-out infinite;
+    animation-delay: 4s;
+}
+
+.card-icon {
+    background: var(--color-secondary);
+    color: var(--color-primary);
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-info h3 {
+    font-size: 1.3rem;
+    color: white;
+    margin-bottom: 2px;
+}
+
+.card-info p {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@media (max-width: 992px) {
+    .hero {
+        padding: 0 20px;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 100px;
+        gap: 20px;
+    }
+
+    .hero-right {
+        display: none;
+        /* Hide floating cards on mobile/tablet as per user request */
+    }
+
+    .hero-left {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        padding: 140px 20px 80px;
+        background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(10, 61, 38, 0.3)),
+            url('../assets/images/hero-bg.jpg') center/cover;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-badge {
+        padding: 6px 15px;
+        font-size: 0.8rem;
+    }
+}

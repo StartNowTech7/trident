@@ -1,0 +1,100 @@
+/* Why Choose Us / USP Section Styles */
+.usp-section {
+    padding: 80px 20px;
+    background: #ffffff;
+}
+
+.usp-header {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 60px;
+}
+
+.usp-intro {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
+.usp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.usp-card {
+    background: #f9fafb;
+    padding: 40px 30px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.usp-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-secondary);
+    background: white;
+}
+
+.usp-card.highlight {
+    background: linear-gradient(135deg, var(--color-primary), #0d4d2f);
+    color: white;
+    border: none;
+}
+
+.usp-card.highlight p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.usp-card.highlight .icon-box {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.icon-box {
+    width: 60px;
+    height: 60px;
+    background: rgba(197, 160, 89, 0.15);
+    color: var(--color-primary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    transition: all 0.3s;
+}
+
+.usp-card:hover .icon-box {
+    background: var(--color-secondary);
+    color: white;
+    transform: rotate(5deg);
+}
+
+.usp-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.usp-card p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.7;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .usp-section {
+        padding: 60px 20px;
+    }
+
+    .usp-card {
+        padding: 30px 20px;
+    }
+}
