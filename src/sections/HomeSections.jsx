@@ -35,9 +35,9 @@ export const AboutRedesign = () => {
         <section className="about-redesign">
             <div className="about-content-wrapper">
                 <div className="about-images">
-                    <img src={aviation1} alt="Aviation 1" className="img-1" />
-                    <img src={aviation2} alt="Aviation 2" className="img-2" />
-                    <img src={shipmentImg} alt="Cargo Shipment" className="img-3" />
+                    <img src={aviation1} alt="Aviation 1" className="img-1" loading="lazy" />
+                    <img src={aviation2} alt="Aviation 2" className="img-2" loading="lazy" />
+                    <img src={shipmentImg} alt="Cargo Shipment" className="img-3" loading="lazy" />
                 </div>
                 <div className="about-text">
                     <h4>About Us</h4>
@@ -183,7 +183,7 @@ export const ProfessionalSkills = () => {
         <section className="skills-section" ref={sectionRef}>
             <div className="skills-wrapper">
                 <div className="skills-image">
-                    <img src={teamProf} alt="Professional workers" />
+                    <img src={teamProf} alt="Professional workers" loading="lazy" />
                 </div>
                 <div className="skills-content">
                     <h4>Our Proficiency</h4>

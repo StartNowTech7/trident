@@ -71,12 +71,18 @@ const Navbar = () => {
 
                 <li className="nav-item"><Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link></li>
                 <li className="nav-mobile-cta">
+                    <a href="#" className="nav-track-btn" onClick={() => setIsMenuOpen(false)}>TRACK ORDER</a>
                     <Link to="/contact" className="btn btn-primary" onClick={() => setIsMenuOpen(false)}>GET A QUOTE</Link>
                 </li>
             </ul>
 
-            <Link to="/contact" className="btn btn-primary nav-cta">GET A QUOTE</Link>
-        </nav>
+
+
+            <div className="navbar-actions">
+                <a href="#" className="nav-track-btn">TRACK ORDER</a>
+                <Link to="/contact" className="btn btn-primary nav-cta">GET A QUOTE</Link>
+            </div>
+        </nav >
     );
 };
 

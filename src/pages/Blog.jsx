@@ -6,6 +6,7 @@ import { Calendar, User } from 'lucide-react';
 import blog1 from '../assets/images/aviation-1.jpg';
 import blog2 from '../assets/images/cargo-trends.jpg';
 import blog3 from '../assets/images/cta-bg.jpg';
+import headBg from '../assets/images/aviation-2.jpg';
 
 const Blog = () => {
     const blogPosts = [
@@ -37,7 +38,7 @@ const Blog = () => {
             <PageHeader
                 title="Blog"
                 subtitle="News & Insights"
-                bgImage="https://images.unsplash.com/photo-1436491865332-7a61a109c0f3?q=80&w=2070&auto=format&fit=crop"
+                bgImage={headBg}
             />
             <section style={{ padding: '80px 20px', backgroundColor: 'white' }}>
                 <div className="container">

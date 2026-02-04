@@ -1,6 +1,7 @@
 import React from 'react';
 import PageHeader from '../components/PageHeader';
 import { Check } from 'lucide-react';
+import headBg from '../assets/images/cargo-trends.jpg';
 
 const Pricing = () => {
     const plans = [
@@ -43,7 +44,7 @@ const Pricing = () => {
             <PageHeader
                 title="Pricing"
                 subtitle="Our Service Packages"
-                bgImage="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?q=80&w=2070&auto=format&fit=crop"
+                bgImage={headBg}
             />
             <section style={{ padding: '80px 20px', backgroundColor: '#f9fafb' }}>
                 <div className="container">

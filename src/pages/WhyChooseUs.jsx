@@ -3,6 +3,12 @@ import PageHeader from '../components/PageHeader';
 import { Shield, Globe, Users, Award } from 'lucide-react';
 import '../styles/WhyChooseUs.css';
 import Contact from '../sections/Contact';
+import headBg from '../assets/images/why-choose-us-header.png';
+import specializedAviation from '../assets/images/specialized-aviation.png';
+import globalExpertise from '../assets/images/global-expertise.png';
+import aviationSupport from '../assets/images/aviation-support.png';
+import ecoAviation from '../assets/images/eco-aviation.png';
+import sectionBg from '../assets/images/services-bg.png';
 
 const WhyChooseUs = () => {
     return (
@@ -10,60 +16,98 @@ const WhyChooseUs = () => {
             <PageHeader
                 title="Why Choose Us"
                 subtitle="Your Trusted Aviation Partner Worldwide"
-                bgImage="https://images.unsplash.com/photo-1517976487492-5750f3195933?q=80&w=2070&auto=format&fit=crop"
+                bgImage={headBg}
             />
 
             <section className="usp-section">
-                <div className="container">
+                <div className="usp-parallax-bg" style={{ backgroundImage: `url(${sectionBg})` }}></div>
+                <div className="usp-container">
                     <div className="usp-header">
                         <span className="section-subtitle">Our Unique Selling Proposition</span>
                         <h2>Excellence in Aviation Services</h2>
                         <p className="usp-intro">
                             Trident Aviation Services’ USP lies in its specialization as a trusted Airline GSA and CSA partner,
                             offering airlines a comprehensive and results-driven approach to passenger and cargo sales.
-                            Our strength comes from a combination of deep industry expertise, customer-centric solutions,
-                            and a commitment to innovation and sustainability.
                         </p>
                     </div>
 
-                    <div className="usp-grid">
-                        <div className="usp-card">
-                            <div className="icon-box"><Shield size={32} /></div>
-                            <h3>Generic vs. Specialized</h3>
-                            <p>
-                                Unlike generic service providers, we focus solely on aviation excellence—ensuring airlines achieve
-                                maximum market visibility, optimized cargo capacity, and exceptional customer service. This focused
-                                approach positions Trident Aviation Services as the preferred partner for international airlines.
-                            </p>
+                    <div className="usp-path-container">
+                        <div className="usp-step">
+                            <div className="usp-content-wrapper">
+                                <div className="usp-card">
+                                    <div className="usp-icon-node">
+                                        <Shield size={32} />
+                                    </div>
+                                    <div className="usp-card-img">
+                                        <img src={specializedAviation} alt="Specialized Aviation" />
+                                    </div>
+                                    <span className="usp-index">01</span>
+                                    <h3>Generic vs. Specialized</h3>
+                                    <p>
+                                        Unlike generic service providers, we focus solely on aviation excellence—ensuring airlines achieve
+                                        maximum market visibility and optimized cargo capacity. This focused approach positions Trident
+                                        as a preferred global partner.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
 
-                        <div className="usp-card highlight">
-                            <div className="icon-box"><Globe size={32} /></div>
-                            <h3>Industry Overview</h3>
-                            <p>
-                                Operating within a dynamic aviation sector shaped by globalization and digital transformation,
-                                we provide the local expertise and global reach airlines need. Our cargo sales ensure airlines
-                                maximize profitability while offering seamless solutions to freight forwarders.
-                            </p>
+                        <div className="usp-step">
+                            <div className="usp-content-wrapper">
+                                <div className="usp-card">
+                                    <div className="usp-icon-node">
+                                        <Globe size={32} />
+                                    </div>
+                                    <div className="usp-card-img">
+                                        <img src={globalExpertise} alt="Local Expertise" />
+                                    </div>
+                                    <span className="usp-index">02</span>
+                                    <h3>Industry Overview</h3>
+                                    <p>
+                                        Operating within a dynamic aviation sector, we provide the local expertise and global reach
+                                        airlines need. Our cargo sales ensure airlines maximize profitability while offering
+                                        seamless solutions.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
 
-                        <div className="usp-card">
-                            <div className="icon-box"><Users size={32} /></div>
-                            <h3>Customer Expectations</h3>
-                            <p>
-                                The modern aviation landscape demands 24/7 support and personalized solutions. Trident Aviation Services
-                                is well-positioned to meet these needs, delivering world-class service to both airlines and their customers
-                                through transparent communication.
-                            </p>
+                        <div className="usp-step">
+                            <div className="usp-content-wrapper">
+                                <div className="usp-card">
+                                    <div className="usp-icon-node">
+                                        <Users size={32} />
+                                    </div>
+                                    <div className="usp-card-img">
+                                        <img src={aviationSupport} alt="Customer Support" />
+                                    </div>
+                                    <span className="usp-index">03</span>
+                                    <h3>Customer Expectations</h3>
+                                    <p>
+                                        The modern aviation landscape demands 24/7 support and personalized solutions. We delivery
+                                        world-class service through transparent communication and dedicated account management.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
 
-                        <div className="usp-card">
-                            <div className="icon-box"><Award size={32} /></div>
-                            <h3>Sustainability & Innovation</h3>
-                            <p>
-                                With the aviation industry embracing sustainability and digital innovation, we integrate forward-thinking
-                                strategies and environmentally responsible practices into our operations, aligning with the future of global aviation.
-                            </p>
+                        <div className="usp-step">
+                            <div className="usp-content-wrapper">
+                                <div className="usp-card">
+                                    <div className="usp-icon-node">
+                                        <Award size={32} />
+                                    </div>
+                                    <div className="usp-card-img">
+                                        <img src={ecoAviation} alt="Cargo Innovation" />
+                                    </div>
+                                    <span className="usp-index">04</span>
+                                    <h3>Sustainability & Innovation</h3>
+                                    <p>
+                                        We integrate forward-thinking strategies and environmentally responsible practices
+                                        into our operations, aligning with the future of global aviation and digital transformation.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

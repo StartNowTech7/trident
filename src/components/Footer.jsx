@@ -15,7 +15,7 @@ const Footer = () => {
                     <div className="footer-logo-box">
                         <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
                             <div style={{ background: 'white', padding: '5px', borderRadius: '4px' }}>
-                                <img src={logo} alt="Trident" style={{ width: '40px', height: 'auto' }} />
+                                <img src={logo} alt="Trident" style={{ width: '40px', height: 'auto' }} loading="lazy" />
                             </div>
                             <div style={{ display: 'flex', flexDirection: 'column', lineHeight: '1.1' }}>
                                 <span style={{ fontSize: '24px', fontWeight: '800', color: 'white', letterSpacing: '1px' }}>TRIDENT</span>

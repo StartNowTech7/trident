@@ -42,6 +42,7 @@ const HistorySection = () => {
                             src="/src/assets/images/services-bg-new.png"
                             alt="Global Aviation Partnerships"
                             className="history-main-image"
+                            loading="lazy"
                         />
                         <div className="experience-badge">
                             <span className="years">15+</span>

@@ -11,6 +11,7 @@ const About = () => {
                         <img
                             src="/images/aviation-excellence.png"
                             alt="Aviation Excellence"
+                            loading="lazy"
                         />
                         <div className="experience-badge">
                             <span className="years">15+</span>

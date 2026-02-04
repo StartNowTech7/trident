@@ -56,7 +56,7 @@ const Team = () => {
                                     margin: '0 auto 20px',
                                     border: '4px solid var(--color-secondary)'
                                 }}>
-                                    <img src={member.image_url || member.image} alt={member.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                    <img src={member.image_url || member.image} alt={member.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
                                 </div>
                                 <h3 style={{ fontSize: '1.5rem', color: 'var(--color-primary)', marginBottom: '5px' }}>{member.name}</h3>
                                 <p style={{ color: 'var(--color-secondary)', fontWeight: '600' }}>{member.role}</p>

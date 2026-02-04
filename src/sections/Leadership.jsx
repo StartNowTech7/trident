@@ -9,7 +9,7 @@ const Leadership = () => {
             <div className="leadership-container">
                 <div className="md-message-box">
                     <div className="md-image">
-                        <img src={kushanImg} alt="Kushan Senabandu" />
+                        <img src={kushanImg} alt="Kushan Senabandu" loading="lazy" />
                     </div>
                     <div className="md-content">
                         <Quote size={50} className="quote-icon" />
