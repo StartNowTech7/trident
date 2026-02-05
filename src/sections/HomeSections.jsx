@@ -306,7 +306,7 @@ export const Testimonials = () => {
             <div className="container">
                 <div className="section-header" style={{ textAlign: 'center', marginBottom: '50px' }}>
                     <h4 style={{ color: 'var(--color-secondary)', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '10px' }}>Client Success Stories</h4>
-                    <h2 style={{ fontSize: '2.5rem', color: '#ffffff' }}>What Our Partners Say</h2>
+                    <h2 style={{ fontSize: '2.5rem', color: '#ffffff' }}>Trusted by Aviation Leaders</h2>
                 </div>
 
                 <div className="testimonials-wrapper">

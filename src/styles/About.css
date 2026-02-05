@@ -80,11 +80,11 @@
 }
 
 .mv-card {
-    background: #fdfcf8;
-    padding: 25px;
+    background: var(--color-primary);
+    padding: 30px;
     border-radius: 8px;
     border-top: 5px solid var(--color-secondary);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
@@ -95,23 +95,28 @@
 .icon-box {
     width: 60px;
     height: 60px;
-    background: var(--color-primary);
+    background: rgba(255, 255, 255, 0.1);
     color: var(--color-secondary);
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 25px;
+    border: 1px solid rgba(197, 160, 89, 0.3);
+}
+
+.icon-box svg {
+    color: var(--color-secondary);
 }
 
 .mv-card h3 {
     font-size: 1.8rem;
-    color: var(--color-primary);
+    color: #ffffff;
     margin-bottom: 20px;
 }
 
 .mv-card p {
-    color: #666;
+    color: #cbd5e1;
     line-height: 1.7;
 }
 
@@ -152,11 +157,28 @@
 }
 
 /* Principles Bento Grid */
+.principles-section-wrapper {
+    background: linear-gradient(rgba(15, 30, 60, 0.9), rgba(15, 30, 60, 0.9)),
+        url('../assets/images/principles-bg.jpg') center/cover fixed;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.principles-section-wrapper .values-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.principles-section-wrapper .values-header h2 {
+    color: #ffffff;
+}
+
 .principles-bento-section {
     max-width: 1200px;
-    margin: 40px auto 0;
-    padding: 30px 20px;
-    border-top: 1px solid #eee;
+    margin: 0 auto;
+    padding: 0 20px;
+    border-top: none;
 }
 
 .bento-grid {
@@ -426,4 +448,55 @@
     .history-stats {
         grid-template-columns: 1fr;
     }
+
+    .history-image-wrapper .experience-badge {
+        padding: 15px;
+        top: -15px;
+        right: -10px;
+    }
+
+    .history-image-wrapper .experience-badge .years {
+        font-size: 1.8rem;
+    }
+
+    .history-image-wrapper .experience-badge .text {
+        font-size: 0.65rem;
+    }
+}
+
+/* Bento Grid Themes */
+.bento-item.theme-sustainability {
+    background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+    border-color: #A5D6A7;
+}
+
+.bento-item.theme-customer {
+    background: #FFF8E1;
+    border-color: #FFE082;
+}
+
+.bento-item.theme-innovation {
+    background: #E0F7FA;
+    border-color: #B2EBF2;
+}
+
+.bento-item.theme-excellence {
+    background: #FFF3E0;
+    border-color: #FFCC80;
+}
+
+.bento-item.theme-integrity {
+    background: #F5F5F5;
+    border-color: #E0E0E0;
+}
+
+/* Hover effects for themes */
+.bento-item.theme-sustainability:hover,
+.bento-item.theme-customer:hover,
+.bento-item.theme-innovation:hover,
+.bento-item.theme-excellence:hover,
+.bento-item.theme-integrity:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
 }

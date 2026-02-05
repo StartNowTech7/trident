@@ -1,6 +1,7 @@
 import React from 'react';
 import { History, TrendingUp, Users } from 'lucide-react';
 import '../styles/About.css';
+import historyImg from '../assets/images/history-bg-new.jpg';
 
 const HistorySection = () => {
     return (
@@ -39,7 +40,7 @@ const HistorySection = () => {
                     </div>
                     <div className="history-image-wrapper">
                         <img
-                            src="/src/assets/images/services-bg-new.png"
+                            src={historyImg}
                             alt="Global Aviation Partnerships"
                             className="history-main-image"
                             loading="lazy"
