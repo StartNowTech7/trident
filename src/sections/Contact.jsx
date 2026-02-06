@@ -32,9 +32,9 @@ const Contact = () => {
         <section className="contact-section" id="contact">
             <div className="contact-container">
                 <div className="contact-info">
-                    <span className="section-subtitle" style={{ color: 'var(--color-secondary)' }}>Get In Touch</span>
+                    <span className="section-subtitle" style={{ color: 'var(--color-primary)' }}>Get In Touch</span>
                     <h2>Ready to Fly Higher?</h2>
-                    <p style={{ color: 'rgba(255,255,255,0.8)', maxWidth: '500px' }}>
+                    <p style={{ color: '#666', maxWidth: '500px' }}>
                         Contact Trident Aviation Services today for world-class airline representation and cargo solutions.
                     </p>
 
@@ -113,6 +113,19 @@ const Contact = () => {
                             </p>
                         )}
                     </form>
+                </div>
+            </div>
+
+            {/* Floating Contact Icons */}
+            <div className="floating-contact-icons">
+                <div className="floating-icon" title="Call Us">
+                    <Phone size={24} />
+                </div>
+                <div className="floating-icon" title="Email Us">
+                    <Mail size={24} />
+                </div>
+                <div className="floating-icon" title="Our Location">
+                    <MapPin size={24} />
                 </div>
             </div>
 

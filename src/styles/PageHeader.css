@@ -9,6 +9,7 @@
     color: white;
     text-align: center;
     overflow: hidden;
+    background: var(--color-primary);
 }
 
 .page-header-bg {

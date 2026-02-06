@@ -45,8 +45,14 @@
     padding: 100px 20px;
     background: linear-gradient(rgba(253, 252, 248, 0.92), rgba(253, 252, 248, 0.92)),
         url('../assets/images/about-bg.jpg') center/cover no-repeat;
-    background-attachment: fixed;
     overflow: hidden;
+}
+
+/* Enable parallax on desktop only */
+@media (min-width: 1024px) {
+    .about-redesign {
+        background-attachment: fixed;
+    }
 }
 
 
@@ -481,8 +487,14 @@
     padding: 100px 20px;
     background: linear-gradient(rgba(244, 247, 246, 0.95), rgba(244, 247, 246, 0.95)),
         url('../assets/images/skills-bg.jpg') center/cover no-repeat;
-    background-attachment: fixed;
     overflow: hidden;
+}
+
+/* Enable parallax on desktop only */
+@media (min-width: 1024px) {
+    .skills-section {
+        background-attachment: fixed;
+    }
 }
 
 .skills-wrapper {
@@ -665,11 +677,46 @@
 /* Testimonials Section */
 .testimonials-section {
     padding: 120px 20px;
-    background: linear-gradient(135deg, rgba(30, 30, 30, 0.9) 0%, rgba(15, 15, 15, 0.8) 100%),
-        url('../assets/images/testimonials-bg.jpg') center/cover no-repeat;
-    background-attachment: fixed;
+    background:
+        linear-gradient(135deg, rgba(70, 81, 76, 0.92) 0%, rgba(10, 61, 38, 0.88) 100%),
+        url('../assets/images/services-premium-bg.png') center/cover no-repeat;
     position: relative;
     overflow: hidden;
+}
+
+/* Decorative background shapes - More visible */
+.testimonials-section::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(197, 160, 89, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: float-slow 8s ease-in-out infinite;
+}
+
+.testimonials-section::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(197, 160, 89, 0.25) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: float-medium 6s ease-in-out infinite;
+}
+
+
+/* Enable parallax on desktop only */
+@media (min-width: 1024px) {
+    .testimonials-section {
+        background-attachment: fixed;
+    }
 }
 
 .testimonials-section .section-header h2 {

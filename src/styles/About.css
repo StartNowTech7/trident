@@ -159,10 +159,17 @@
 /* Principles Bento Grid */
 .principles-section-wrapper {
     background: linear-gradient(rgba(15, 30, 60, 0.9), rgba(15, 30, 60, 0.9)),
-        url('../assets/images/principles-bg.jpg') center/cover fixed;
+        url('../assets/images/principles-bg.jpg') center/cover no-repeat;
     padding: 100px 0;
     position: relative;
     overflow: hidden;
+}
+
+/* Enable parallax on desktop only */
+@media (min-width: 1024px) {
+    .principles-section-wrapper {
+        background-attachment: fixed;
+    }
 }
 
 .principles-section-wrapper .values-header {
