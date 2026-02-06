@@ -3,12 +3,12 @@ import PageHeader from '../components/PageHeader';
 import { Shield, Globe, Users, Award } from 'lucide-react';
 import '../styles/WhyChooseUs.css';
 import Contact from '../sections/Contact';
-import headBg from '../assets/images/why-choose-us-header.png';
-import specializedAviation from '../assets/images/specialized-aviation.png';
-import globalExpertise from '../assets/images/global-expertise.png';
-import aviationSupport from '../assets/images/aviation-support.png';
-import ecoAviation from '../assets/images/eco-aviation.png';
-import sectionBg from '../assets/images/services-bg.png';
+import headBg from '../assets/images/why-choose-us-header.jpg';
+import specializedAviation from '../assets/images/specialized-aviation.jpg';
+import globalExpertise from '../assets/images/global-expertise.jpg';
+import aviationSupport from '../assets/images/aviation-support.jpg';
+import ecoAviation from '../assets/images/eco-aviation.jpg';
+import sectionBg from '../assets/images/services-bg.jpg';
 
 const WhyChooseUs = () => {
     return (
