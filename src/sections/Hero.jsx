@@ -1,10 +1,18 @@
 import React from 'react';
 import { Plane, Award, Globe, TrendingUp } from 'lucide-react';
 import '../styles/Hero.css';
+import heroBg from '../assets/images/hero-bg.jpg';
 
 const Hero = () => {
     return (
         <section className="hero" id="home">
+            <img
+                src={heroBg}
+                alt="Aviation background"
+                className="hero-bg-image"
+                fetchPriority="high"
+            />
+            <div className="hero-overlay"></div>
             <div className="hero-container">
                 <div className="hero-left">
                     <div className="hero-badge">
