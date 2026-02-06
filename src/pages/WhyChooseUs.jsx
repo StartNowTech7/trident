@@ -3,7 +3,7 @@ import PageHeader from '../components/PageHeader';
 import { Shield, Globe, Users, Award } from 'lucide-react';
 import '../styles/WhyChooseUs.css';
 import Contact from '../sections/Contact';
-import headBg from '../assets/images/why-choose-us-header.jpg';
+import headBg from '../assets/images/aviation-1.jpg';
 import specializedAviation from '../assets/images/specialized-aviation.jpg';
 import globalExpertise from '../assets/images/global-expertise.jpg';
 import aviationSupport from '../assets/images/aviation-support.jpg';

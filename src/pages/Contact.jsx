@@ -1,7 +1,7 @@
 import React from 'react';
 import PageHeader from '../components/PageHeader';
 import ContactSection from '../sections/Contact';
-import contactBg from '../assets/images/contacth.jpg';
+import contactBg from '../assets/images/ss.png';
 
 const Contact = () => {
     return (
