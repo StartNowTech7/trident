@@ -24,7 +24,7 @@ const Hero = () => {
                         Connecting airlines with markets and customers through reliable, innovative, and customer-centric solutions for sustainable growth.
                     </p>
                     <div className="hero-buttons">
-                        <a href="/services" className="btn btn-primary">Our Services</a>
+                        <a href="/services" className="btn btn-secondary">Our Services</a>
                         <a href="/contact" className="btn btn-outline">Contact Us</a>
                     </div>
                 </div>

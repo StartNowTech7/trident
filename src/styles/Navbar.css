@@ -310,9 +310,22 @@
         /* Prevent clipping */
     }
 
+    .nav-mobile-cta .btn.btn-primary {
+        background-color: var(--color-secondary) !important;
+        color: white !important;
+        border: none !important;
+        font-weight: 700 !important;
+    }
+
+    .nav-mobile-cta .btn.btn-primary:hover {
+        background-color: var(--color-primary) !important;
+        color: white !important;
+    }
+
     .nav-mobile-cta .nav-track-btn {
         border: 2px solid var(--color-primary) !important;
         background-color: white !important;
+        color: var(--color-primary) !important;
     }
 }
 
@@ -329,5 +342,11 @@
     .brand-sub {
         font-size: 8px;
         letter-spacing: 2px;
+    }
+
+    /* Extra specificity for mobile GET A QUOTE button */
+    .nav-mobile-cta .btn.btn-primary {
+        background-color: var(--color-secondary) !important;
+        color: #FFFFFF !important;
     }
 }

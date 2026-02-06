@@ -97,6 +97,16 @@ ul {
   /* Even Darker Green */
 }
 
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #a88842;
+  /* Darker Gold */
+}
+
 .btn-outline {
   border: 2px solid var(--color-secondary);
   color: var(--color-secondary);
