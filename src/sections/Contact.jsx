@@ -13,6 +13,27 @@ const Contact = () => {
     });
     const [loading, setLoading] = React.useState(false);
     const [success, setSuccess] = React.useState(false);
+    const [loadMap, setLoadMap] = React.useState(false);
+    const mapRef = React.useRef(null);
+
+    React.useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                setLoadMap(true);
+                observer.disconnect();
+            }
+        }, { rootMargin: '200px' }); // Start loading 200px before it comes into view
+
+        if (mapRef.current) {
+            observer.observe(mapRef.current);
+        }
+
+        return () => {
+            if (mapRef.current) {
+                observer.unobserve(mapRef.current);
+            }
+        };
+    }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -129,17 +150,35 @@ const Contact = () => {
                 </div>
             </div>
 
-            <div className="contact-map">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.77066068364!2d104.91924157584102!3d11.568301544046183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310951468171095d%3A0xe5469ad011884ea8!2sCanadia%20Bank%20Tower!5e0!3m2!1sen!2skh!4v1711123456789!5m2!1sen!2skh"
-                    width="100%"
-                    height="450"
-                    style={{ border: 0, borderRadius: '12px', boxShadow: '0 10px 40px rgba(0,0,0,0.1)' }}
-                    allowFullScreen=""
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Trident Aviation Services Location"
-                ></iframe>
+            <div className="contact-map" ref={mapRef}>
+                {loadMap ? (
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.77066068364!2d104.91924157584102!3d11.568301544046183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310951468171095d%3A0xe5469ad011884ea8!2sCanadia%20Bank%20Tower!5e0!3m2!1sen!2skh!4v1711123456789!5m2!1sen!2skh"
+                        width="100%"
+                        height="450"
+                        style={{ border: 0, borderRadius: '12px', boxShadow: '0 10px 40px rgba(0,0,0,0.1)' }}
+                        allowFullScreen=""
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="Trident Aviation Services Location"
+                    ></iframe>
+                ) : (
+                    <div style={{
+                        width: '100%',
+                        height: '450px',
+                        borderRadius: '12px',
+                        backgroundColor: '#f3f4f6',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        boxShadow: '0 10px 40px rgba(0,0,0,0.05)'
+                    }}>
+                        <div style={{ textAlign: 'center', color: '#9ca3af' }}>
+                            <MapPin size={48} style={{ margin: '0 auto 10px', opacity: 0.5 }} />
+                            <p>Loading Map...</p>
+                        </div>
+                    </div>
+                )}
             </div>
         </section>
     );

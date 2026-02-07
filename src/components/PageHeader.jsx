@@ -2,31 +2,49 @@ import React, { useState, useEffect } from 'react';
 import '../styles/PageHeader.css';
 import defaultBg from '../assets/images/cta-bg.jpg';
 
-const PageHeader = ({ title, subtitle, bgImage }) => {
+const PageHeader = ({ title, subtitle, bgImage, pcBgImage, mobileBgImage }) => {
     const [imageLoaded, setImageLoaded] = useState(false);
-    const imageSrc = bgImage || defaultBg;
+    const [currentImage, setCurrentImage] = useState(bgImage || defaultBg);
 
     useEffect(() => {
-        // Reset loading state when image changes
-        setImageLoaded(false);
+        const handleResize = () => {
+            const isMobile = window.innerWidth <= 768;
+            const newImage = isMobile
+                ? (mobileBgImage || bgImage || defaultBg)
+                : (pcBgImage || bgImage || defaultBg);
+            setCurrentImage(newImage);
 
-        // Preload the image
-        const img = new Image();
-        img.src = imageSrc;
+            // Optimization logic for PC vs Mobile shimmer
+            if (!isMobile) {
+                setImageLoaded(true);
+            } else {
+                setImageLoaded(false);
+            }
+        };
 
-        if (img.complete) {
-            // Image is already cached
-            setImageLoaded(true);
-        } else {
-            img.onload = () => setImageLoaded(true);
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, [bgImage, pcBgImage, mobileBgImage]);
+
+    useEffect(() => {
+        // Preload logic for mobile
+        if (window.innerWidth <= 768) {
+            const img = new Image();
+            img.src = currentImage;
+            if (img.complete) {
+                setImageLoaded(true);
+            } else {
+                img.onload = () => setImageLoaded(true);
+            }
         }
-    }, [imageSrc]);
+    }, [currentImage]);
 
     return (
         <div className="page-header">
             <div className={`page-header-bg-wrapper ${imageLoaded ? 'loaded' : 'loading'}`}>
                 <img
-                    src={imageSrc}
+                    src={currentImage}
                     alt={title}
                     className="page-header-bg"
                     fetchPriority="high"

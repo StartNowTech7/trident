@@ -6,6 +6,7 @@ import Leadership from '../sections/Leadership';
 import { ProfessionalSkills } from '../sections/HomeSections';
 
 import aboutHeaderImg from '../assets/images/about-header-passion.jpg';
+import aboutPcHeaderImg from '../assets/images/aboutusn.jpg';
 
 const About = () => {
     return (
@@ -14,6 +15,7 @@ const About = () => {
                 title="About Us"
                 subtitle="Who We Are"
                 bgImage={aboutHeaderImg}
+                pcBgImage={aboutPcHeaderImg}
             />
             <AboutSection />
             <HistorySection />

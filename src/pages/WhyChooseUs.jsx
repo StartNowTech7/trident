@@ -9,6 +9,7 @@ import globalExpertise from '../assets/images/global-expertise.jpg';
 import aviationSupport from '../assets/images/aviation-support.jpg';
 import ecoAviation from '../assets/images/eco-aviation.jpg';
 import sectionBg from '../assets/images/services-bg.jpg';
+import heroBg from '../assets/images/whychoose.jpg';
 
 const WhyChooseUs = () => {
     return (
@@ -17,6 +18,7 @@ const WhyChooseUs = () => {
                 title="Why Choose Us"
                 subtitle="Your Trusted Aviation Partner Worldwide"
                 bgImage={headBg}
+                pcBgImage={heroBg}
             />
 
             <section className="usp-section">

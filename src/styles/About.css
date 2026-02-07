@@ -175,6 +175,14 @@
 .principles-section-wrapper .values-header {
     text-align: center;
     margin-bottom: 50px;
+
+}
+
+.principles-section-wrapper .values-header h4 {
+    color: var(--color-secondary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
 }
 
 .principles-section-wrapper .values-header h2 {

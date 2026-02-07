@@ -2,6 +2,7 @@ import React from 'react';
 import PageHeader from '../components/PageHeader';
 import { Check } from 'lucide-react';
 import headBg from '../assets/images/cargo-trends.jpg';
+import pcHeadBg from '../assets/images/cta-bg.jpg';
 
 const Pricing = () => {
     const plans = [
@@ -45,6 +46,7 @@ const Pricing = () => {
                 title="Pricing"
                 subtitle="Our Service Packages"
                 bgImage={headBg}
+                pcBgImage={pcHeadBg}
             />
             <section style={{ padding: '80px 20px', backgroundColor: '#f9fafb' }}>
                 <div className="container">

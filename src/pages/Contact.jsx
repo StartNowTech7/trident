@@ -2,6 +2,7 @@ import React from 'react';
 import PageHeader from '../components/PageHeader';
 import ContactSection from '../sections/Contact';
 import contactBg from '../assets/images/ss.png';
+import contactPcBg from '../assets/images/contact.jpg';
 
 const Contact = () => {
     return (
@@ -9,6 +10,7 @@ const Contact = () => {
             <PageHeader
                 title="Contact Us"
                 bgImage={contactBg}
+                pcBgImage={contactPcBg}
             />
             <ContactSection />
         </>

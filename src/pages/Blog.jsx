@@ -7,6 +7,7 @@ import blog1 from '../assets/images/aviation-1.jpg';
 import blog2 from '../assets/images/cargo-trends.jpg';
 import blog3 from '../assets/images/cta-bg.jpg';
 import headBg from '../assets/images/aviation-2.jpg';
+import pcHeadBg from '../assets/images/airline.jpg';
 
 const Blog = () => {
     const blogPosts = [
@@ -39,6 +40,7 @@ const Blog = () => {
                 title="Blog"
                 subtitle="News & Insights"
                 bgImage={headBg}
+                pcBgImage={pcHeadBg}
             />
             <section style={{ padding: '80px 20px', backgroundColor: 'white' }}>
                 <div className="container">

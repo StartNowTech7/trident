@@ -3,6 +3,7 @@ import PageHeader from '../components/PageHeader';
 import kushanImg from '../assets/kushan.png';
 import { supabase } from '../lib/supabase';
 import teamHeaderImg from '../assets/images/team-header-hands.jpg';
+import teamPcHeaderImg from '../assets/images/team.jpg';
 
 const Team = () => {
     const [teamMembers, setTeamMembers] = React.useState([]);
@@ -34,6 +35,7 @@ const Team = () => {
                 title="Our Team"
                 subtitle="Meet Our Experts"
                 bgImage={teamHeaderImg}
+                pcBgImage={teamPcHeaderImg}
             />
             {loading ? (
                 <section style={{ padding: '120px 20px', backgroundColor: 'white', minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>

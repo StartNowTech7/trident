@@ -4,6 +4,7 @@ import ServicesSection from '../sections/Services';
 import Contact from '../sections/Contact';
 
 import servicesHeaderImg from '../assets/images/services-header-boeing.jpg';
+import servicesPcHeaderImg from '../assets/images/air.jpg';
 
 const Services = () => {
     return (
@@ -11,6 +12,7 @@ const Services = () => {
             <PageHeader
                 title="Our Services"
                 bgImage={servicesHeaderImg}
+                pcBgImage={servicesPcHeaderImg}
             />
             <ServicesSection />
             {/* Could add more detailed service descriptions/grids here */}

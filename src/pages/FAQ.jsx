@@ -4,6 +4,7 @@ import { ChevronDown } from 'lucide-react';
 
 import { supabase } from '../lib/supabase';
 import faqHeaderImg from '../assets/images/faq-header.jpg';
+import faqPcHeaderImg from '../assets/images/faq-header.jpg';
 
 const FAQ = () => {
     const [openIndex, setOpenIndex] = useState(null);
@@ -35,6 +36,7 @@ const FAQ = () => {
                 title="FAQ"
                 subtitle="Frequently Asked Questions"
                 bgImage={faqHeaderImg}
+                pcBgImage={faqPcHeaderImg}
             />
             {loading ? (
                 <section style={{ padding: '120px 20px', backgroundColor: 'white', minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
