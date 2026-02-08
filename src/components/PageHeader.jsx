@@ -3,7 +3,8 @@ import '../styles/PageHeader.css';
 import defaultBg from '../assets/images/cta-bg.jpg';
 
 const PageHeader = ({ title, subtitle, bgImage, pcBgImage, mobileBgImage }) => {
-    const [imageLoaded, setImageLoaded] = useState(false);
+    // Initialize as loaded for PC to skip animation, false for mobile to show shimmer
+    const [imageLoaded, setImageLoaded] = useState(() => typeof window !== 'undefined' && window.innerWidth > 768);
     const [currentImage, setCurrentImage] = useState(bgImage || defaultBg);
 
     useEffect(() => {

@@ -13,10 +13,14 @@ const Contact = () => {
     });
     const [loading, setLoading] = React.useState(false);
     const [success, setSuccess] = React.useState(false);
-    const [loadMap, setLoadMap] = React.useState(false);
+    // Eager load map on PC (> 768px), lazy load on mobile
+    const [loadMap, setLoadMap] = React.useState(() => typeof window !== 'undefined' && window.innerWidth > 768);
     const mapRef = React.useRef(null);
 
     React.useEffect(() => {
+        // If already loaded (PC), don't set up observer
+        if (loadMap) return;
+
         const observer = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting) {
                 setLoadMap(true);
