@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import { ChevronDown } from 'lucide-react';
 
 import { supabase } from '../lib/supabase';
-import faqHeaderImg from '../assets/images/faq-header.jpg';
-import faqPcHeaderImg from '../assets/images/faq-header.jpg';
+import faqHeaderImg from '../assets/images/faq-header.webp';
+import faqPcHeaderImg from '../assets/images/faq-header.webp';
 
 const FAQ = () => {
     const [openIndex, setOpenIndex] = useState(null);
@@ -32,6 +33,11 @@ const FAQ = () => {
 
     return (
         <>
+            <SEO
+                title="FAQ"
+                description="Find answers to frequently asked questions about Trident Aviation Services, GSA services, cargo handling, and aviation solutions. Get the information you need."
+                keywords="aviation FAQ, GSA questions, cargo services FAQ, aviation support questions, airline services FAQ"
+            />
             <PageHeader
                 title="FAQ"
                 subtitle="Frequently Asked Questions"

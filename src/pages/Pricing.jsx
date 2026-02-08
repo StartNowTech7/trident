@@ -1,8 +1,9 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import { Check } from 'lucide-react';
-import headBg from '../assets/images/cargo-trends.jpg';
-import pcHeadBg from '../assets/images/cta-bg.jpg';
+import headBg from '../assets/images/cargo-trends.webp';
+import pcHeadBg from '../assets/images/cta-bg.webp';
 
 const Pricing = () => {
     const plans = [
@@ -42,6 +43,11 @@ const Pricing = () => {
 
     return (
         <>
+            <SEO
+                title="Pricing"
+                description="Explore flexible pricing plans for Trident Aviation Services. Customizable GSA, CSA, and aviation service packages tailored to your airline's needs."
+                keywords="aviation pricing, GSA pricing, CSA packages, aviation service plans, airline service costs"
+            />
             <PageHeader
                 title="Pricing"
                 subtitle="Our Service Packages"

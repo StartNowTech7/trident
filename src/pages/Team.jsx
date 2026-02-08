@@ -1,9 +1,10 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
-import kushanImg from '../assets/kushan.png';
+import kushanImg from '../assets/kushan.webp';
 import { supabase } from '../lib/supabase';
-import teamHeaderImg from '../assets/images/team-header-hands.jpg';
-import teamPcHeaderImg from '../assets/images/team.jpg';
+import teamHeaderImg from '../assets/images/team-header-hands.webp';
+import teamPcHeaderImg from '../assets/images/team.webp';
 
 const Team = () => {
     const [teamMembers, setTeamMembers] = React.useState([]);
@@ -31,6 +32,11 @@ const Team = () => {
 
     return (
         <>
+            <SEO
+                title="Our Team"
+                description="Meet the experienced leadership team at Trident Aviation Services. Our aviation experts bring decades of industry knowledge and dedication to excellence."
+                keywords="aviation team, aviation experts, airline professionals, aviation leadership, GSA team"
+            />
             <PageHeader
                 title="Our Team"
                 subtitle="Meet Our Experts"

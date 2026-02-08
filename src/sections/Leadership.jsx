@@ -1,7 +1,7 @@
 import React from 'react';
 import { Quote } from 'lucide-react';
 import '../styles/Leadership.css';
-import kushanImg from '../assets/kushan.png';
+import kushanImg from '../assets/kushan.webp';
 
 const Leadership = () => {
     return (

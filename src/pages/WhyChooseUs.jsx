@@ -1,19 +1,25 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import { Shield, Globe, Users, Award } from 'lucide-react';
 import '../styles/WhyChooseUs.css';
 import Contact from '../sections/Contact';
-import headBg from '../assets/images/aviation-1.jpg';
-import specializedAviation from '../assets/images/specialized-aviation.jpg';
-import globalExpertise from '../assets/images/global-expertise.jpg';
-import aviationSupport from '../assets/images/aviation-support.jpg';
-import ecoAviation from '../assets/images/eco-aviation.jpg';
-import sectionBg from '../assets/images/services-bg.jpg';
-import heroBg from '../assets/images/whychoose.jpg';
+import headBg from '../assets/images/aviation-1.webp';
+import specializedAviation from '../assets/images/specialized-aviation.webp';
+import globalExpertise from '../assets/images/global-expertise.webp';
+import aviationSupport from '../assets/images/aviation-support.webp';
+import ecoAviation from '../assets/images/eco-aviation.webp';
+import sectionBg from '../assets/images/services-bg.webp';
+import heroBg from '../assets/images/whychoose.webp';
 
 const WhyChooseUs = () => {
     return (
         <>
+            <SEO
+                title="Why Choose Us"
+                description="Discover why airlines worldwide trust Trident Aviation Services. Learn about our specialized expertise, global reach, customer-focused approach, and commitment to sustainability."
+                keywords="why choose trident aviation, aviation partner, airline GSA benefits, trusted aviation services, aviation excellence"
+            />
             <PageHeader
                 title="Why Choose Us"
                 subtitle="Your Trusted Aviation Partner Worldwide"

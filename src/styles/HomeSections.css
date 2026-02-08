@@ -40,11 +40,9 @@
     letter-spacing: 1px;
 }
 
-/* About Section Redesign */
 .about-redesign {
     padding: 100px 20px;
-    background: linear-gradient(rgba(253, 252, 248, 0.92), rgba(253, 252, 248, 0.92)),
-        url('../assets/images/about-bg.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(253, 252, 248, 0.92), rgba(253, 252, 248, 0.92));
     overflow: hidden;
 }
 
@@ -244,7 +242,7 @@
 /* CTA Banner */
 .cta-banner {
     background: linear-gradient(rgba(15, 30, 60, 0.85), rgba(15, 30, 60, 0.85)),
-        url('../assets/images/aviation-2.jpg') center/cover;
+        url('../assets/images/aviation-2.webp') center/cover;
     padding: 100px 20px;
     text-align: center;
     color: white;
@@ -267,7 +265,7 @@
 /* Services Grid Redesign */
 .services-grid-redesign {
     padding: 120px 20px;
-    background: url('../assets/images/premium_aviation_bg.jpg') center/cover no-repeat;
+    background: url('../assets/images/premium_aviation_bg.webp') center/cover no-repeat;
     background-attachment: fixed;
     position: relative;
     overflow: hidden;
@@ -493,7 +491,7 @@
 .skills-section {
     padding: 100px 20px;
     background: linear-gradient(rgba(244, 247, 246, 0.95), rgba(244, 247, 246, 0.95)),
-        url('../assets/images/skills-bg.jpg') center/cover no-repeat;
+        url('../assets/images/skills-bg.webp') center/cover no-repeat;
     overflow: hidden;
 }
 
@@ -686,7 +684,7 @@
     padding: 120px 20px;
     background:
         linear-gradient(135deg, rgba(70, 81, 76, 0.92) 0%, rgba(10, 61, 38, 0.88) 100%),
-        url('../assets/images/services-premium-bg.png') center/cover no-repeat;
+        url('../assets/images/services-premium-bg.webp') center/cover no-repeat;
     position: relative;
     overflow: hidden;
 }

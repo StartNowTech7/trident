@@ -2,7 +2,7 @@
     padding: 100px 20px;
     background:
         linear-gradient(135deg, rgba(255, 255, 255, 0.92) 10%, rgba(255, 255, 255, 0.95) 30%, rgba(241, 248, 244, 0.92) 5%),
-        url('../assets/images/contact.jpg') center/cover no-repeat;
+        url('../assets/images/contact.webp') center/cover no-repeat;
     color: #444;
     position: relative;
     overflow: hidden;

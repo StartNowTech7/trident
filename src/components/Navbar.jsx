@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import '../styles/Navbar.css';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.webp';
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);

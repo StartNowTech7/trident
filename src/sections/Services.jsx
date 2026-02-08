@@ -3,11 +3,11 @@ import { Plane, Package, Users, Globe, Handshake, ArrowRight, CheckCircle } from
 import '../styles/Services.css';
 
 // Image Imports
-import service1 from '../assets/images/GSA.png';
-import service2 from '../assets/images/cargo-trends.jpg';
-import service3 from '../assets/images/airline.jpg';
-import service4 from '../assets/images/servie.jpg';
-import service5 from '../assets/images/part.jpg';
+import service1 from '../assets/images/GSA.webp';
+import service2 from '../assets/images/cargo-trends.webp';
+import service3 from '../assets/images/airline.webp';
+import service4 from '../assets/images/servie.webp';
+import service5 from '../assets/images/part.webp';
 
 const Services = () => {
     const services = [

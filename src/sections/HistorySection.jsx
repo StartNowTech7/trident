@@ -1,7 +1,7 @@
 import React from 'react';
 import { History, TrendingUp, Users } from 'lucide-react';
 import '../styles/About.css';
-import historyImg from '../assets/images/history-bg-new.jpg';
+import historyImg from '../assets/images/history-bg-new.webp';
 
 const HistorySection = () => {
     return (

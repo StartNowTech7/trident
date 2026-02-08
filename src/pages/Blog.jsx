@@ -1,13 +1,14 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import { Calendar, User } from 'lucide-react';
 
 // Local Image Imports
-import blog1 from '../assets/images/aviation-1.jpg';
-import blog2 from '../assets/images/cargo-trends.jpg';
-import blog3 from '../assets/images/cta-bg.jpg';
-import headBg from '../assets/images/aviation-2.jpg';
-import pcHeadBg from '../assets/images/airline.jpg';
+import blog1 from '../assets/images/aviation-1.webp';
+import blog2 from '../assets/images/cargo-trends.webp';
+import blog3 from '../assets/images/cta-bg.webp';
+import headBg from '../assets/images/aviation-2.webp';
+import pcHeadBg from '../assets/images/airline.webp';
 
 const Blog = () => {
     const blogPosts = [
@@ -36,6 +37,11 @@ const Blog = () => {
 
     return (
         <>
+            <SEO
+                title="Blog"
+                description="Read the latest aviation industry news, insights, and trends from Trident Aviation Services. Stay updated on GSA services, cargo trends, and aviation innovations."
+                keywords="aviation blog, aviation news, GSA insights, cargo trends, aviation industry updates"
+            />
             <PageHeader
                 title="Blog"
                 subtitle="News & Insights"

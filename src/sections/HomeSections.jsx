@@ -3,10 +3,10 @@ import { Plane, Package, Globe, TrendingUp, Clock, Shield, Award, Users, Handsha
 import '../styles/HomeSections.css';
 
 // Local Image Imports
-import aviation1 from '../assets/images/aviation-1.jpg';
-import aviation2 from '../assets/images/aviation-2.jpg';
-import shipmentImg from '../assets/images/cargo-trends.jpg'; // Using cargo shipment image
-import teamProf from '../assets/images/team-skills.jpg';
+import aviation1 from '../assets/images/aviation-1.webp';
+import aviation2 from '../assets/images/aviation-2.webp';
+import shipmentImg from '../assets/images/cargo-trends.webp'; // Using cargo shipment image
+import teamProf from '../assets/images/team-skills.webp';
 
 export const StatsBar = () => {
     const stats = [

@@ -10,7 +10,7 @@ const About = () => {
                     <div className="about-intro">
                         <div className="about-image-main">
                             <img
-                                src="/images/aviation-excellence.png"
+                                src="/images/aviation-excellence.webp"
                                 alt="Aviation Excellence"
                                 loading="lazy"
                             />

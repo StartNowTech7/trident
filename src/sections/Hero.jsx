@@ -1,7 +1,7 @@
 import React from 'react';
 import { Plane, Award, Globe, TrendingUp } from 'lucide-react';
 import '../styles/Hero.css';
-import heroBg from '../assets/images/hero-bg.jpg';
+import heroBg from '../assets/images/hero-bg.webp';
 
 const Hero = () => {
     const [heroImage, setHeroImage] = React.useState(heroBg);

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Linkedin, Twitter, Mail, Phone, MapPin, ChevronRight, Globe, Clock } from 'lucide-react';
 import '../styles/Footer.css';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.webp';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();

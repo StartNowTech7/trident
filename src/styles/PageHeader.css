@@ -21,32 +21,6 @@
     z-index: 0;
 }
 
-.page-header-bg-wrapper.loading {
-    background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
-}
-
-@media (max-width: 768px) {
-    .page-header-bg-wrapper.loading {
-        animation: shimmer 2s infinite;
-    }
-}
-
-.page-header-bg-wrapper.loaded .page-header-bg {
-    opacity: 1;
-}
-
-@keyframes shimmer {
-
-    0%,
-    100% {
-        opacity: 0.8;
-    }
-
-    50% {
-        opacity: 1;
-    }
-}
-
 .page-header-bg {
     position: absolute;
     top: 0;
@@ -56,22 +30,10 @@
     object-fit: cover;
     object-position: center 25%;
     /* Focus on the upper part of aviation images */
-    opacity: 0;
+    opacity: 1;
     z-index: 0;
 }
 
-@media (min-width: 769px) {
-    .page-header-bg {
-        /* Allow transition on PC too */
-        transition: opacity 0.6s ease-in-out;
-    }
-}
-
-@media (max-width: 768px) {
-    .page-header-bg {
-        transition: opacity 0.6s ease-in-out;
-    }
-}
 
 .page-header-overlay {
     position: absolute;
