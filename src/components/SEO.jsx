@@ -5,7 +5,8 @@ const SEO = ({
     description,
     keywords,
     ogImage = '/logonew.png',
-    ogType = 'website'
+    ogType = 'website',
+    headerImage // Add this prop to preload header images
 }) => {
     const siteUrl = 'https://trident-aviation.vercel.app'; // Update with your actual domain
     const fullTitle = title ? `${title} | Trident Aviation Services` : 'Trident Aviation Services - Professional Aviation Solutions';
@@ -61,7 +62,20 @@ const SEO = ({
         }
         canonical.setAttribute('href', window.location.href);
 
-    }, [fullTitle, description, keywords, ogImage, ogType, siteUrl]);
+        // Preload header image if provided
+        if (headerImage) {
+            let preloadLink = document.querySelector(`link[rel="preload"][href="${headerImage}"]`);
+            if (!preloadLink) {
+                preloadLink = document.createElement('link');
+                preloadLink.setAttribute('rel', 'preload');
+                preloadLink.setAttribute('as', 'image');
+                preloadLink.setAttribute('href', headerImage);
+                preloadLink.setAttribute('fetchpriority', 'high');
+                document.head.appendChild(preloadLink);
+            }
+        }
+
+    }, [fullTitle, description, keywords, ogImage, ogType, siteUrl, headerImage]);
 
     return null;
 };
