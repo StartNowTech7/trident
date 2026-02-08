@@ -28,7 +28,7 @@
 /* Add shimmer effect on mobile for better loading feedback */
 @media (max-width: 768px) {
     .page-header-bg-wrapper.loading {
-        animation: shimmer 2s infinite;
+        animation: shimmer 1.2s infinite;
     }
 }
 
@@ -58,7 +58,7 @@
     object-position: center 25%;
     /* Focus on the upper part of aviation images */
     opacity: 0;
-    transition: opacity 0.6s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
     z-index: 0;
 }
 
