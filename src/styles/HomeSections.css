@@ -257,6 +257,13 @@
     color: white;
 }
 
+@media (min-width: 1024px) {
+    .cta-banner {
+        /* Shift image down visually on PC */
+        background-position: center 25%;
+    }
+}
+
 /* Services Grid Redesign */
 .services-grid-redesign {
     padding: 120px 20px;
