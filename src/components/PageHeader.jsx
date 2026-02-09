@@ -58,8 +58,8 @@ const PageHeader = ({ title, subtitle, bgImage, pcBgImage, mobileBgImage }) => {
             </div>
             <div className="page-header-overlay"></div>
             <div className="page-header-content">
-                <h1>{title}</h1>
-                <div className="breadcrumb">
+                <h1 style={{ animation: 'none', transition: 'none', transform: 'none', opacity: 1 }}>{title}</h1>
+                <div className="breadcrumb" style={{ animation: 'none', transition: 'none', transform: 'none', opacity: 1 }}>
                     Home <span>/</span> {subtitle || title}
                 </div>
             </div>

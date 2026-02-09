@@ -48,6 +48,8 @@ body {
 
 html {
   overflow-x: hidden;
+  overflow-y: scroll;
+  /* Force scrollbar to prevent layout shift */
   width: 100%;
 }
 
@@ -59,6 +61,21 @@ h5,
 h6 {
   font-family: var(--font-heading);
   color: var(--color-primary);
+}
+
+/* NUCLEAR OPTION: Force Stop Header Animations Globally */
+.page-header h1,
+.page-header-content,
+.page-header-content * {
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+  opacity: 1 !important;
+}
+
+/* Disable .App transition that causes layout shift animations */
+.App {
+  transition: none !important;
 }
 
 a {

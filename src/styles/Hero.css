@@ -67,6 +67,7 @@
     margin-bottom: 25px;
     line-height: 1.1;
     color: white;
+    /* Ensure this doesn't accidentally apply to other H1s if HTML structure changes */
 }
 
 .hero-text {

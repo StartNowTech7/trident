@@ -10,6 +10,9 @@
     text-align: center;
     overflow: hidden;
     background: var(--color-bg-dark);
+    /* Ensure container itself doesn't animate layout shifts */
+    transition: none !important;
+    animation: none !important;
 }
 
 .page-header-bg-wrapper {
@@ -96,12 +99,24 @@
 .page-header-content {
     position: relative;
     z-index: 2;
+    /* Aggressively disable any potential animations */
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    width: 100%;
+    /* Ensure stable width */
 }
 
 .page-header h1 {
     font-size: 3rem;
     color: white;
     margin-bottom: 10px;
+    /* Ensure no animations interfere */
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    text-align: center;
 }
 
 @media (max-width: 768px) {

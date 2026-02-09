@@ -30,23 +30,12 @@ const ScrollManager = () => {
     if (savedPosition) {
       const targetScroll = parseInt(savedPosition, 10);
 
-      // Momentarily hide the page to prevent "flash of top"
-      document.documentElement.style.visibility = 'hidden';
-
       const restore = () => {
         window.scrollTo(0, targetScroll);
       }
 
       // Initial attempt
       restore();
-
-      // Reveal after a short delay to ensure the browser has painted the scroll position
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          restore(); // Ensure position one last time before reveal
-          document.documentElement.style.visibility = '';
-        });
-      });
 
       // Polling to enforce position as images load (backup)
       let attempts = 0;
@@ -62,8 +51,6 @@ const ScrollManager = () => {
       // Cleanup
       return () => {
         clearInterval(interval);
-        // Ensure visibility is restored if component unmounts quickly
-        document.documentElement.style.visibility = '';
       };
     }
   }, []); // Empty dependency array = Runs only on MOUNT (Refresh)
