@@ -41,15 +41,9 @@
             transparent 0%,
             rgba(255, 255, 255, 0.05) 50%,
             transparent 100%);
-    animation: shimmer 1.5s infinite;
+    /* No animation */
 }
 
-/* Add shimmer effect on mobile for better loading feedback */
-@media (max-width: 768px) {
-    .page-header-bg-wrapper.loading {
-        animation: shimmer 1.2s infinite;
-    }
-}
 
 @keyframes shimmer {
 
@@ -76,8 +70,8 @@
     object-fit: cover;
     object-position: center 25%;
     /* Focus on the upper part of aviation images */
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    opacity: 1;
+    /* Immediately visible - no transition */
     z-index: 0;
 }
 
