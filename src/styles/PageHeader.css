@@ -22,7 +22,23 @@
 }
 
 .page-header-bg-wrapper.loading {
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    background: linear-gradient(135deg, var(--color-primary) 0%, #052416 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header-bg-wrapper.loading::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.05) 50%,
+            transparent 100%);
+    animation: shimmer 1.5s infinite;
 }
 
 /* Add shimmer effect on mobile for better loading feedback */

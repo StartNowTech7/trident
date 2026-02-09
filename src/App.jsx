@@ -13,12 +13,90 @@ import Blog from './pages/Blog';
 import WhyChooseUsPage from './pages/WhyChooseUs';
 import './index.css';
 
-// Scroll to top on route change
-const ScrollToTop = () => {
+// Custom Scroll Manager to handle restoration and route changes manually
+const ScrollManager = () => {
   const { pathname } = useLocation();
-  useEffect(() => {
+  const isFirstRender = React.useRef(true);
+
+  // 1. Manual Scroll Restoration on Refresh (Mount only)
+  React.useLayoutEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+
+    const scrollKey = `scrollPosition_${pathname}`;
+    const savedPosition = sessionStorage.getItem(scrollKey);
+
+    if (savedPosition) {
+      const targetScroll = parseInt(savedPosition, 10);
+
+      // Momentarily hide the page to prevent "flash of top"
+      document.documentElement.style.visibility = 'hidden';
+
+      const restore = () => {
+        window.scrollTo(0, targetScroll);
+      }
+
+      // Initial attempt
+      restore();
+
+      // Reveal after a short delay to ensure the browser has painted the scroll position
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          restore(); // Ensure position one last time before reveal
+          document.documentElement.style.visibility = '';
+        });
+      });
+
+      // Polling to enforce position as images load (backup)
+      let attempts = 0;
+      const maxAttempts = 20;
+      const interval = setInterval(() => {
+        if (Math.abs(window.scrollY - targetScroll) > 5) {
+          restore();
+        }
+        attempts++;
+        if (attempts >= maxAttempts) clearInterval(interval);
+      }, 50);
+
+      // Cleanup
+      return () => {
+        clearInterval(interval);
+        // Ensure visibility is restored if component unmounts quickly
+        document.documentElement.style.visibility = '';
+      };
+    }
+  }, []); // Empty dependency array = Runs only on MOUNT (Refresh)
+
+  // 2. Save scroll position continuously for the CURRENT path
+  React.useEffect(() => {
+    const scrollKey = `scrollPosition_${pathname}`;
+
+    // Debounce for performance
+    let timeoutId;
+    const handleScroll = () => {
+      if (timeoutId) clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        sessionStorage.setItem(scrollKey, window.scrollY.toString());
+      }, 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (timeoutId) clearTimeout(timeoutId);
+    };
+  }, [pathname]);
+
+  // 3. Scroll to Top on Route Change
+  React.useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
     window.scrollTo(0, 0);
   }, [pathname]);
+
   return null;
 };
 
@@ -58,7 +136,7 @@ const AuthGuard = ({ children }) => {
 function App() {
   return (
     <Router>
-      <ScrollToTop />
+      <ScrollManager />
       <div className="App">
         <Routes>
           {/* Public Routes */}
