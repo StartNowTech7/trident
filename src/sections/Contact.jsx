@@ -141,18 +141,6 @@ const Contact = () => {
                 </div>
             </div>
 
-            {/* Floating Contact Icons */}
-            <div className="floating-contact-icons">
-                <div className="floating-icon" title="Call Us">
-                    <Phone size={24} />
-                </div>
-                <div className="floating-icon" title="Email Us">
-                    <Mail size={24} />
-                </div>
-                <div className="floating-icon" title="Our Location">
-                    <MapPin size={24} />
-                </div>
-            </div>
 
             <div className="contact-map" ref={mapRef}>
                 {loadMap ? (
