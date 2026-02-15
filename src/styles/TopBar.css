@@ -48,7 +48,7 @@
     color: var(--color-secondary);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .top-bar {
         display: none;
     }

@@ -194,7 +194,7 @@
 }
 
 /* Responsiveness */
-@media (max-width: 1100px) {
+@media (max-width: 1300px) {
     .nav-links {
         gap: 15px;
     }
@@ -206,9 +206,19 @@
     .navbar-logo img {
         height: 50px;
     }
+
+    .nav-track-btn {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+
+    .nav-cta {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
     .navbar {
         padding: 0 20px;
     }
@@ -301,8 +311,8 @@
         letter-spacing: 1px;
         box-shadow: 0 4px 15px rgba(197, 160, 89, 0.2);
         border-radius: 8px;
-        margin-bottom: 20px;
-        /* Increased spacing */
+        margin-bottom: 15px;
+        /* Balanced spacing */
         height: auto;
         min-height: 54px;
         /* Ensure minimum height */

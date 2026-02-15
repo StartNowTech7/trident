@@ -304,7 +304,7 @@
 
 .service-tab-item {
     flex: 1;
-    min-width: 140px;
+    min-width: 180px;
     padding: 20px 10px;
     text-align: center;
     cursor: pointer;
@@ -589,14 +589,26 @@
         height: 450px;
         order: -1;
         /* Show images above text on mobile */
+        margin-bottom: 30px;
     }
 
-    .about-images img:first-child {
-        width: 80%;
+    .about-images img.img-3,
+    .about-images img.img-4 {
+        display: none;
+        /* Simplify for tablet/mobile */
     }
 
-    .about-images img:last-child {
+    .about-images img.img-1 {
         width: 70%;
+        height: 300px;
+        left: 5%;
+    }
+
+    .about-images img.img-2 {
+        width: 60%;
+        height: 250px;
+        right: 5%;
+        bottom: 20px;
     }
 }
 
