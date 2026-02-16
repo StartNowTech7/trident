@@ -205,6 +205,7 @@
 
     .navbar-logo img {
         height: 60px;
+        width: auto;
     }
 
     .nav-track-btn {
@@ -341,7 +342,8 @@
 
 @media (max-width: 480px) {
     .navbar-logo img {
-        height: 50px;
+        height: 40px;
+        width: auto;
         margin-right: 10px;
     }
 

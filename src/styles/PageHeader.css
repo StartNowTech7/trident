@@ -11,8 +11,28 @@
     overflow: hidden;
     background: var(--color-bg-dark);
     /* Ensure container itself doesn't animate layout shifts */
-    transition: none !important;
-    animation: none !important;
+    margin-top: 90px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    background: var(--color-bg-dark);
+    /* Ensure container itself doesn't animate layout shifts */
+}
+
+@keyframes headerImageFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .page-header-bg-wrapper {
@@ -70,8 +90,8 @@
     object-fit: cover;
     object-position: center 25%;
     /* Focus on the upper part of aviation images */
-    opacity: 1;
-    /* Immediately visible - no transition */
+    opacity: 0;
+    animation: headerImageFadeIn 1.2s ease-out forwards;
     z-index: 0;
 }
 
