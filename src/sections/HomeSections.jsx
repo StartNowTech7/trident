@@ -121,7 +121,17 @@ export const ServicesGridRedesign = () => {
         fetchServices();
     }, []);
 
-    if (loading) return null;
+    // Prevent layout shift: render the structure even if loading
+    // or use a skeleton/placeholder with min-height matching the content
+    const displayServices = loading
+        ? [
+            {
+                icon_name: "Plane",
+                title: "Loading Services...",
+                description: "Please wait while we fetch the latest service details."
+            }
+        ]
+        : services;
 
     return (
         <section className="services-grid-redesign">
@@ -130,11 +140,12 @@ export const ServicesGridRedesign = () => {
 
                 <div className="services-tabs-container">
                     <div className="services-tabs-nav">
-                        {services.map((service, index) => (
+                        {displayServices.map((service, index) => (
                             <div
                                 key={index}
                                 className={`service-tab-item ${activeTab === index ? 'active' : ''}`}
-                                onClick={() => setActiveTab(index)}
+                                onClick={() => !loading && setActiveTab(index)}
+                                style={{ cursor: loading ? 'default' : 'pointer' }}
                             >
                                 <div className="tab-icon">{IconMap[service.icon_name] || <Plane size={32} />}</div>
                                 <span className="tab-label">{service.title}</span>
@@ -144,10 +155,10 @@ export const ServicesGridRedesign = () => {
 
                     <div className="service-tab-content">
                         <div className="content-icon-large">
-                            {IconMap[services[activeTab]?.icon_name] || <Plane size={32} />}
+                            {IconMap[displayServices[activeTab]?.icon_name] || <Plane size={32} />}
                         </div>
-                        <h3>{services[activeTab]?.title}</h3>
-                        <p>{services[activeTab]?.description}</p>
+                        <h3>{displayServices[activeTab]?.title}</h3>
+                        <p>{displayServices[activeTab]?.description}</p>
                     </div>
                 </div>
             </div>

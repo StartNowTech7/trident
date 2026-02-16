@@ -272,6 +272,8 @@
     background-attachment: fixed;
     position: relative;
     overflow: hidden;
+    min-height: 800px;
+    /* Enforce minimum height to prevent layout shift */
 }
 
 .services-grid-redesign h2 {
