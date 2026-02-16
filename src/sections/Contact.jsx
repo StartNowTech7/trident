@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { MapPin, Phone, Mail } from 'lucide-react';
 import '../styles/Contact.css';
@@ -14,12 +15,17 @@ const Contact = () => {
     const [loading, setLoading] = React.useState(false);
     const [success, setSuccess] = React.useState(false);
     // Eager load map on PC (> 768px), lazy load on mobile
-    const [loadMap, setLoadMap] = React.useState(() => typeof window !== 'undefined' && window.innerWidth > 768);
+    const [loadMap, setLoadMap] = React.useState(false);
     const mapRef = React.useRef(null);
 
     React.useEffect(() => {
+        // Set initial loadMap state on client
+        if (window.innerWidth > 768) {
+            setLoadMap(true);
+        }
+
         // If already loaded (PC), don't set up observer
-        if (loadMap) return;
+        if (window.innerWidth > 768) return;
 
         const observer = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting) {
@@ -57,9 +63,12 @@ const Contact = () => {
         <section className="contact-section" id="contact">
             <div className="contact-container">
                 <div className="contact-info">
-                    <span className="section-subtitle" style={{ color: 'var(--color-primary)' }}>Get In Touch</span>
+                    <div className="contact-badge">
+                        <span className="dot"></span>
+                        <span className="badge-text">GET IN TOUCH</span>
+                    </div>
                     <h2>Ready to Fly Higher?</h2>
-                    <p style={{ color: '#666', maxWidth: '500px' }}>
+                    <p className="contact-intro">
                         Contact Trident Aviation Services today for world-class airline representation and cargo solutions.
                     </p>
 

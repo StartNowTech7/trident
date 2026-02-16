@@ -1,10 +1,11 @@
+'use client';
 import React from 'react';
-import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
-import kushanImg from '../assets/kushan.webp';
+import Image from 'next/image';
+const kushanImg = '/images/kushan.webp';
 import { supabase } from '../lib/supabase';
-import teamHeaderImg from '../assets/images/team-header-hands.webp';
-import teamPcHeaderImg from '../assets/images/team.webp';
+const teamHeaderImg = '/images/team-header-hands.webp';
+const teamPcHeaderImg = '/images/team.webp';
 
 const Team = () => {
     const [teamMembers, setTeamMembers] = React.useState([]);
@@ -21,7 +22,7 @@ const Team = () => {
                     {
                         name: "Kushan Senabandu",
                         role: "Managing Director",
-                        image: kushanImg
+                        image: '/images/kushan.webp'
                     }
                 ]);
             }
@@ -32,11 +33,6 @@ const Team = () => {
 
     return (
         <>
-            <SEO
-                title="Our Team"
-                description="Meet the experienced leadership team at Trident Aviation Services. Our aviation experts bring decades of industry knowledge and dedication to excellence."
-                keywords="aviation team, aviation experts, airline professionals, aviation leadership, GSA team"
-            />
             <PageHeader
                 title="Our Team"
                 subtitle="Meet Our Experts"
@@ -67,9 +63,10 @@ const Team = () => {
                                         borderRadius: '50%',
                                         overflow: 'hidden',
                                         margin: '0 auto 20px',
-                                        border: '4px solid var(--color-secondary)'
+                                        border: '4px solid var(--color-secondary)',
+                                        position: 'relative'
                                     }}>
-                                        <img src={member.image_url || member.image} alt={member.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
+                                        <Image src={member.image_url || member.image} alt={member.name} fill style={{ objectFit: 'cover' }} />
                                     </div>
                                     <h3 style={{ fontSize: '1.5rem', color: 'var(--color-primary)', marginBottom: '5px' }}>{member.name}</h3>
                                     <p style={{ color: 'var(--color-secondary)', fontWeight: '600' }}>{member.role}</p>

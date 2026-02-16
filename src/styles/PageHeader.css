@@ -1,5 +1,5 @@
 .page-header {
-    height: 450px;
+    height: 400px;
     /* Slightly taller for better PC presence */
     margin-top: 90px;
     position: relative;
@@ -75,13 +75,31 @@
     z-index: 0;
 }
 
-.page-header-overlay {
+.pc-header-bg {
+    display: block;
+}
+
+.mobile-header-bg {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .pc-header-bg {
+        display: none;
+    }
+
+    .mobile-header-bg {
+        display: block;
+    }
+}
+
+.header-overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4));
     z-index: 1;
     /* Neutral dark overlay for better image clarity */
 }
@@ -115,7 +133,7 @@
 
 @media (max-width: 768px) {
     .page-header {
-        height: 250px;
+        height: 280px;
     }
 
     .page-header h1 {
@@ -129,7 +147,7 @@
 
 @media (max-width: 480px) {
     .page-header {
-        height: 200px;
+        height: 220px;
     }
 
     .page-header h1 {

@@ -1,5 +1,4 @@
 import React from 'react';
-import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import { Check } from 'lucide-react';
 import headBg from '../assets/images/cargo-trends.webp';
@@ -42,15 +41,10 @@ const Pricing = () => {
     ];
 
     return (
-        <>
-            <SEO
-                title="Pricing"
-                description="Explore flexible pricing plans for Trident Aviation Services. Customizable GSA, CSA, and aviation service packages tailored to your airline's needs."
-                keywords="aviation pricing, GSA pricing, CSA packages, aviation service plans, airline service costs"
-            />
+        <div className="pricing-page">
             <PageHeader
-                title="Pricing"
-                subtitle="Our Service Packages"
+                title="Our Pricing"
+                subtitle="Transparent Packages"
                 bgImage={headBg}
                 pcBgImage={pcHeadBg}
             />
@@ -110,7 +104,7 @@ const Pricing = () => {
                     </div>
                 </div>
             </section>
-        </>
+        </div>
     );
 };
 

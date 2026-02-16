@@ -1,19 +1,22 @@
+'use client';
 import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 import { Plane, Award, Globe, TrendingUp } from 'lucide-react';
 import '../styles/Hero.css';
-import heroBg from '../assets/images/hero-bg.webp';
+
 
 const Hero = () => {
-    const [heroImage, setHeroImage] = React.useState(heroBg);
+    const [heroImage, setHeroImage] = React.useState('/images/hero-bg.webp');
 
     React.useEffect(() => {
         const handleResize = () => {
             // Using a slightly different image for PC if needed, 
             // but for now setting up the framework to switch Hero images
             if (window.innerWidth <= 768) {
-                setHeroImage(heroBg); // Mobile image
+                setHeroImage('/images/hero-bg.webp'); // Mobile image
             } else {
-                setHeroImage(heroBg); // PC image (can be replaced with a PC-specific one)
+                setHeroImage('/images/hero-bg.webp'); // PC image (can be replaced with a PC-specific one)
             }
         };
 
@@ -24,11 +27,13 @@ const Hero = () => {
 
     return (
         <section className="hero" id="home">
-            <img
+            <Image
                 src={heroImage}
                 alt="Aviation background"
+                fill
+                priority
                 className="hero-bg-image"
-                fetchPriority="high"
+                style={{ objectFit: 'cover' }}
             />
             <div className="hero-overlay"></div>
             <div className="hero-container">
@@ -42,8 +47,8 @@ const Hero = () => {
                         Connecting airlines with markets and customers through reliable, innovative, and customer-centric solutions for sustainable growth.
                     </p>
                     <div className="hero-buttons">
-                        <a href="/services" className="btn btn-secondary">Our Services</a>
-                        <a href="/contact" className="btn btn-outline">Contact Us</a>
+                        <Link href="/services" className="btn btn-secondary">Our Services</Link>
+                        <Link href="/contact" className="btn btn-outline">Contact Us</Link>
                     </div>
                 </div>
 

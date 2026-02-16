@@ -1,0 +1,59 @@
+
+> trident@0.0.0 build
+> next build
+
+Γû▓ Next.js 16.1.6 (Turbopack)
+- Environments: .env
+
+  Creating an optimized production build ...
+Γ£ô Compiled successfully in 5.0s
+  Running TypeScript ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/37) ...
+  Generating static pages using 7 workers (9/37) 
+  Generating static pages using 7 workers (18/37) 
+  Generating static pages using 7 workers (27/37) 
+Γ£ô Generating static pages using 7 workers (37/37) in 1077.6ms
+  Finalizing page optimization ...
+
+Route (app)
+Γöî Γùï /
+Γö£ Γùï /_not-found
+Γö£ Γùï /about
+Γö£ Γùï /admin
+Γö£ Γùï /admin/dashboard
+Γö£ Γùï /admin/faq
+Γö£ Γùï /admin/inbox
+Γö£ Γùï /admin/login
+Γö£ Γùï /admin/services
+Γö£ Γùï /admin/team
+Γö£ Γùï /admin/testimonials
+Γö£ Γùï /blog
+Γö£ Γùï /contact
+Γö£ Γùï /faq
+Γö£ Γùï /icon.png
+Γö£ Γùï /pricing
+Γö£ Γùï /services
+Γö£ Γùï /team
+Γöö Γùï /why-choose-us
+
+Route (pages)
+Γöî Γùï /About
+Γö£ Γùï /admin/Dashboard
+Γö£ Γùï /admin/Inbox
+Γö£ Γùï /admin/Login
+Γö£ Γùï /admin/ManageFAQ
+Γö£ Γùï /admin/ManageServices
+Γö£ Γùï /admin/ManageTeam
+Γö£ Γùï /admin/ManageTestimonials
+Γö£ Γùï /Blog
+Γö£ Γùï /Contact
+Γö£ Γùï /FAQ
+Γö£ Γùï /Home
+Γö£ Γùï /Pricing
+Γö£ Γùï /Services
+Γö£ Γùï /Team
+Γöö Γùï /WhyChooseUs
+
+Γùï  (Static)  prerendered as static content
+

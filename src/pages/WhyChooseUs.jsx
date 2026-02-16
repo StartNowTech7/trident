@@ -1,25 +1,20 @@
-import React from 'react';
-import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
+import Image from 'next/image';
 import { Shield, Globe, Users, Award } from 'lucide-react';
 import '../styles/WhyChooseUs.css';
 import Contact from '../sections/Contact';
-import headBg from '../assets/images/aviation-1.webp';
-import specializedAviation from '../assets/images/specialized-aviation.webp';
-import globalExpertise from '../assets/images/global-expertise.webp';
-import aviationSupport from '../assets/images/aviation-support.webp';
-import ecoAviation from '../assets/images/eco-aviation.webp';
-import sectionBg from '../assets/images/services-bg.webp';
-import heroBg from '../assets/images/whychoose.webp';
+
+const headBg = '/images/aviation-1.webp';
+const specializedAviation = '/images/specialized-aviation.webp';
+const globalExpertise = '/images/global-expertise.webp';
+const aviationSupport = '/images/aviation-support.webp';
+const ecoAviation = '/images/eco-aviation.webp';
+const sectionBg = '/images/services-bg.webp';
+const heroBg = '/images/whychoose.webp';
 
 const WhyChooseUs = () => {
     return (
         <>
-            <SEO
-                title="Why Choose Us"
-                description="Discover why airlines worldwide trust Trident Aviation Services. Learn about our specialized expertise, global reach, customer-focused approach, and commitment to sustainability."
-                keywords="why choose trident aviation, aviation partner, airline GSA benefits, trusted aviation services, aviation excellence"
-            />
             <PageHeader
                 title="Why Choose Us"
                 subtitle="Your Trusted Aviation Partner Worldwide"
@@ -46,8 +41,8 @@ const WhyChooseUs = () => {
                                     <div className="usp-icon-node">
                                         <Shield size={32} />
                                     </div>
-                                    <div className="usp-card-img">
-                                        <img src={specializedAviation} alt="Specialized Aviation" />
+                                    <div className="usp-card-img" style={{ position: 'relative', height: '200px' }}>
+                                        <Image src={specializedAviation} alt="Specialized Aviation" fill style={{ objectFit: 'cover' }} />
                                     </div>
                                     <span className="usp-index">01</span>
                                     <h3>Generic vs. Specialized</h3>
@@ -66,8 +61,8 @@ const WhyChooseUs = () => {
                                     <div className="usp-icon-node">
                                         <Globe size={32} />
                                     </div>
-                                    <div className="usp-card-img">
-                                        <img src={globalExpertise} alt="Local Expertise" />
+                                    <div className="usp-card-img" style={{ position: 'relative', height: '200px' }}>
+                                        <Image src={globalExpertise} alt="Local Expertise" fill style={{ objectFit: 'cover' }} />
                                     </div>
                                     <span className="usp-index">02</span>
                                     <h3>Industry Overview</h3>
@@ -86,8 +81,8 @@ const WhyChooseUs = () => {
                                     <div className="usp-icon-node">
                                         <Users size={32} />
                                     </div>
-                                    <div className="usp-card-img">
-                                        <img src={aviationSupport} alt="Customer Support" />
+                                    <div className="usp-card-img" style={{ position: 'relative', height: '200px' }}>
+                                        <Image src={aviationSupport} alt="Customer Support" fill style={{ objectFit: 'cover' }} />
                                     </div>
                                     <span className="usp-index">03</span>
                                     <h3>Customer Expectations</h3>
@@ -105,8 +100,8 @@ const WhyChooseUs = () => {
                                     <div className="usp-icon-node">
                                         <Award size={32} />
                                     </div>
-                                    <div className="usp-card-img">
-                                        <img src={ecoAviation} alt="Cargo Innovation" />
+                                    <div className="usp-card-img" style={{ position: 'relative', height: '200px' }}>
+                                        <Image src={ecoAviation} alt="Cargo Innovation" fill style={{ objectFit: 'cover' }} />
                                     </div>
                                     <span className="usp-index">04</span>
                                     <h3>Sustainability & Innovation</h3>

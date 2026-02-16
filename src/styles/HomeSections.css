@@ -66,12 +66,11 @@
 
 .about-images {
     position: relative;
-    height: 650px;
-    /* Increased height to accommodate vertical floating animations */
+    height: 550px;
+    /* Increased container height */
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Removed overflow: hidden to prevent animation clipping */
 }
 
 .about-images img {
@@ -84,39 +83,43 @@
 }
 
 .about-images img.img-1 {
-    width: 65%;
-    height: 350px;
-    top: 0;
-    left: 0;
-    z-index: 3;
-    animation: float-slow 6s ease-in-out infinite, slide-in-left 1s ease-out;
+    width: 420px;
+    /* Was 360 */
+    height: 310px;
+    /* Was 270 */
+    top: 60px;
+    left: -20px;
+    /* Moved left */
+    z-index: 5;
+    animation: float-slow 6s ease-in-out infinite;
 }
 
 .about-images img.img-2 {
-    width: 55%;
-    height: 300px;
-    bottom: 50px;
-    right: 0;
-    z-index: 2;
-    animation: float-medium 5s ease-in-out infinite, slide-in-right 1.2s ease-out;
+    width: 320px;
+    /* Was 280 */
+    height: 240px;
+    /* Was 210 */
+    top: 10px;
+    left: 230px;
+    /* Moved further right */
+    z-index: 3;
+    animation: float-medium 5s ease-in-out infinite;
 }
 
 .about-images img.img-3 {
-    width: 40%;
-    height: 200px;
-    top: 50px;
-    right: 20px;
+    width: 280px;
+    /* Was 240 */
+    height: 210px;
+    /* Was 180 */
+    top: 250px;
+    /* Moved further down */
+    left: 170px;
     z-index: 1;
-    animation: float-fast 4s ease-in-out infinite, slide-in-top 1.4s ease-out;
+    animation: float-fast 4s ease-in-out infinite;
 }
 
 .about-images img.img-4 {
-    width: 35%;
-    height: 180px;
-    bottom: 0;
-    left: 20px;
-    z-index: 4;
-    animation: float-medium 7s ease-in-out infinite, slide-in-bottom 1.6s ease-out;
+    display: none;
 }
 
 .about-images img:hover {
@@ -502,6 +505,15 @@
     }
 }
 
+.skills-image {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
 .skills-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -509,10 +521,6 @@
     max-width: 1200px;
     margin: 0 auto;
     align-items: center;
-}
-
-.skills-image {
-    position: relative;
 }
 
 .skills-image img {
@@ -586,29 +594,35 @@
     }
 
     .about-images {
-        height: 450px;
+        height: 400px;
         order: -1;
         /* Show images above text on mobile */
         margin-bottom: 30px;
-    }
-
-    .about-images img.img-3,
-    .about-images img.img-4 {
-        display: none;
-        /* Simplify for tablet/mobile */
+        width: 100%;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .about-images img.img-1 {
-        width: 70%;
-        height: 300px;
-        left: 5%;
+        width: 280px;
+        height: 210px;
+        top: 60px;
+        left: 20px;
     }
 
     .about-images img.img-2 {
-        width: 60%;
-        height: 250px;
-        right: 5%;
-        bottom: 20px;
+        width: 220px;
+        height: 165px;
+        top: 30px;
+        left: 160px;
+    }
+
+    .about-images img.img-3 {
+        width: 180px;
+        height: 135px;
+        top: 160px;
+        left: 120px;
     }
 }
 
@@ -633,50 +647,58 @@
         padding: 60px 20px;
     }
 
-    .services-cards {
-        flex-direction: column;
-    }
-
-    .service-card-new {
-        flex: auto;
-        min-height: auto;
-    }
-
-    .service-card-new p {
-        opacity: 1;
-        max-height: none;
-        transform: none;
-    }
-
-    .service-card-new h3 {
-        white-space: normal;
-        font-size: 1.3rem;
+    .feature-card {
+        padding: 20px;
     }
 
     .cta-banner h2 {
         font-size: 1.8rem;
     }
-
-    .service-card-new {
-        padding: 30px 20px;
-    }
-
-
 }
 
 @media (max-width: 480px) {
-    .stats-container {
-        grid-template-columns: 1fr;
+    .about-redesign {
+        padding: 40px 20px 20px;
+    }
+
+    .about-content-wrapper {
+        gap: 0;
+    }
+
+    .about-images {
+        height: 280px;
+        max-width: 380px;
+        margin-bottom: 0;
+        margin-top: 20px;
+        /* Changed from -20px */
+    }
+
+    .about-images img.img-1 {
+        width: 280px;
+        height: 210px;
+        top: 20px;
+        /* Changed from 0 */
+        left: 10px;
+        z-index: 5;
+    }
+
+    .about-images img.img-2 {
+        width: 220px;
+        height: 165px;
+        top: 80px;
+        /* Shifted down to match img-1 shift */
+        left: 110px;
+        z-index: 3;
+    }
+
+    .about-images img.img-3 {
+        display: none !important;
     }
 
     .about-text h2,
     .services-grid-redesign h2,
     .skills-content h2 {
         font-size: 1.8rem;
-    }
-
-    .about-images {
-        height: 350px;
     }
 
     .about-features {
@@ -687,7 +709,10 @@
         flex-direction: column;
         text-align: center;
         align-items: center;
-        padding: 20px;
+    }
+
+    .stats-container {
+        grid-template-columns: 1fr;
     }
 }
 

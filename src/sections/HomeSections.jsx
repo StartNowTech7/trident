@@ -1,12 +1,15 @@
+'use client';
 import React, { useEffect, useState, useRef } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 import { Plane, Package, Globe, TrendingUp, Clock, Shield, Award, Users, Handshake } from 'lucide-react';
 import '../styles/HomeSections.css';
 
 // Local Image Imports
-import aviation1 from '../assets/images/aviation-1.webp';
-import aviation2 from '../assets/images/aviation-2.webp';
-import shipmentImg from '../assets/images/cargo-trends.webp'; // Using cargo shipment image
-import teamProf from '../assets/images/team-skills.webp';
+const aviation1 = '/images/aviation-1.webp';
+const aviation2 = '/images/aviation-2.webp';
+const shipmentImg = '/images/cargo-trends.webp';
+const teamProf = '/images/team-skills.webp';
 
 export const StatsBar = () => {
     const stats = [
@@ -35,9 +38,9 @@ export const AboutRedesign = () => {
         <section className="about-redesign">
             <div className="about-content-wrapper">
                 <div className="about-images">
-                    <img src={aviation1} alt="Aviation 1" className="img-1" loading="lazy" />
-                    <img src={aviation2} alt="Aviation 2" className="img-2" loading="lazy" />
-                    <img src={shipmentImg} alt="Cargo Shipment" className="img-3" loading="lazy" />
+                    <Image src={aviation1} alt="Aviation 1" width={360} height={270} className="img-1" priority />
+                    <Image src={aviation2} alt="Aviation 2" width={280} height={210} className="img-2" />
+                    <Image src={shipmentImg} alt="Cargo Shipment" width={240} height={180} className="img-3" />
                 </div>
                 <div className="about-text">
                     <h4>About Us</h4>
@@ -52,9 +55,9 @@ export const AboutRedesign = () => {
                         <li><Globe size={20} color="#C5A059" /> <span>Global Network</span></li>
                         <li><Users size={20} color="#C5A059" /> <span>Expert Team</span></li>
                     </ul>
-                    <a href="/about" className="btn btn-primary" style={{ marginTop: '20px', display: 'inline-block' }}>
+                    <Link href="/about" className="btn btn-primary" style={{ marginTop: '20px', display: 'inline-block' }}>
                         Learn More About Us
-                    </a>
+                    </Link>
                 </div>
             </div>
         </section>
@@ -65,7 +68,7 @@ export const CTABanner = () => {
     return (
         <section className="cta-banner">
             <h2>We Give You Full Control to Complete Your Aviation Needs</h2>
-            <a href="/contact" className="btn btn-secondary" style={{
+            <Link href="/contact" className="btn btn-secondary" style={{
                 background: 'var(--color-secondary)',
                 color: 'var(--color-primary)',
                 padding: '15px 40px',
@@ -73,7 +76,7 @@ export const CTABanner = () => {
                 fontWeight: '600'
             }}>
                 Get Started Today
-            </a>
+            </Link>
         </section>
     );
 };
@@ -183,7 +186,7 @@ export const ProfessionalSkills = () => {
         <section className="skills-section" ref={sectionRef}>
             <div className="skills-wrapper">
                 <div className="skills-image">
-                    <img src={teamProf} alt="Professional workers" loading="lazy" />
+                    <Image src={teamProf} alt="Professional workers" fill style={{ objectFit: 'cover' }} />
                 </div>
                 <div className="skills-content">
                     <h4>Our Proficiency</h4>
@@ -259,7 +262,7 @@ export const WhyChooseUs = () => {
                         for delivering exceptional GSA and CSA services. Our commitment to innovation, sustainability, and customer
                         satisfaction sets us apart in the industry.
                     </p>
-                    <a href="/services" className="btn btn-primary">Explore All Services</a>
+                    <Link href="/services" className="btn btn-primary">Explore All Services</Link>
                 </div>
             </div>
         </section>

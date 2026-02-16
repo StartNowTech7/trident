@@ -1,53 +1,38 @@
+'use client';
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import '../styles/PageHeader.css';
 import defaultBg from '../assets/images/cta-bg.webp';
 
 const PageHeader = ({ title, subtitle, bgImage, pcBgImage, mobileBgImage }) => {
-    // Set initial image based on screen size immediately
-    const getInitialImage = () => {
-        const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
-        return isMobile
-            ? (mobileBgImage || bgImage || defaultBg)
-            : (pcBgImage || bgImage || defaultBg);
-    };
-
-    const [currentImage, setCurrentImage] = useState(getInitialImage);
-
-    useEffect(() => {
-        const handleResize = () => {
-            const isMobile = window.innerWidth <= 768;
-            const newImage = isMobile
-                ? (mobileBgImage || bgImage || defaultBg)
-                : (pcBgImage || bgImage || defaultBg);
-
-            if (newImage !== currentImage) {
-                setCurrentImage(newImage);
-            }
-        };
-
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, [bgImage, pcBgImage, mobileBgImage, currentImage]);
-
     return (
-        <div className="page-header">
-            <div className="page-header-bg-wrapper">
-                <img
-                    src={currentImage}
+        <header className="page-header">
+            <div className="header-image-container">
+                <Image
+                    src={pcBgImage || bgImage || defaultBg}
                     alt={title}
-                    className="page-header-bg"
-                    fetchPriority="high"
-                    loading="eager"
+                    fill
+                    priority
+                    style={{ objectFit: 'cover' }}
+                    className="header-bg pc-header-bg"
+                />
+                <Image
+                    src={mobileBgImage || bgImage || defaultBg}
+                    alt={title}
+                    fill
+                    priority
+                    style={{ objectFit: 'cover' }}
+                    className="header-bg mobile-header-bg"
                 />
             </div>
-            <div className="page-header-overlay"></div>
+            <div className="header-overlay"></div>
             <div className="page-header-content">
                 <h1 style={{ animation: 'none', transition: 'none', transform: 'none', opacity: 1 }}>{title}</h1>
                 <div className="breadcrumb" style={{ animation: 'none', transition: 'none', transform: 'none', opacity: 1 }}>
                     Home <span>/</span> {subtitle || title}
                 </div>
             </div>
-        </div>
+        </header>
     );
 };
 

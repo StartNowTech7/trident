@@ -1,5 +1,6 @@
 import React from 'react';
 import { Target, Eye, ShieldCheck, Award, Users, Lightbulb, Leaf } from 'lucide-react';
+import Image from 'next/image';
 import '../styles/About.css';
 
 const About = () => {
@@ -9,10 +10,12 @@ const About = () => {
                 <div className="about-container">
                     <div className="about-intro">
                         <div className="about-image-main">
-                            <img
+                            <Image
                                 src="/images/aviation-excellence.webp"
                                 alt="Aviation Excellence"
-                                loading="lazy"
+                                width={600}
+                                height={400}
+                                style={{ width: '100%', height: 'auto', borderRadius: '4px' }}
                             />
                             <div className="experience-badge">
                                 <span className="years">15+</span>

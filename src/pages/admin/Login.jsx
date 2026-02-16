@@ -1,5 +1,6 @@
+'use client';
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 import { supabase } from '../../lib/supabase';
 import '../../styles/Admin.css';
 
@@ -8,7 +9,7 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    const navigate = useNavigate();
+    const router = useRouter();
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -24,7 +25,7 @@ const Login = () => {
             setError(error.message);
             setLoading(false);
         } else {
-            navigate('/admin/dashboard');
+            router.push('/admin/dashboard');
         }
     };
 

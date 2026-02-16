@@ -1,6 +1,7 @@
+'use client';
 import React from 'react';
-import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
+import Image from 'next/image';
 import { Calendar, User } from 'lucide-react';
 
 // Local Image Imports
@@ -37,11 +38,6 @@ const Blog = () => {
 
     return (
         <>
-            <SEO
-                title="Blog"
-                description="Read the latest aviation industry news, insights, and trends from Trident Aviation Services. Stay updated on GSA services, cargo trends, and aviation innovations."
-                keywords="aviation blog, aviation news, GSA insights, cargo trends, aviation industry updates"
-            />
             <PageHeader
                 title="Blog"
                 subtitle="News & Insights"
@@ -63,8 +59,8 @@ const Blog = () => {
                                 onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-10px)'}
                                 onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
                             >
-                                <div style={{ height: '220px', overflow: 'hidden' }}>
-                                    <img src={post.image} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                <div style={{ height: '220px', overflow: 'hidden', position: 'relative' }}>
+                                    <Image src={post.image} alt={post.title} fill style={{ objectFit: 'cover' }} />
                                 </div>
                                 <div style={{ padding: '25px' }}>
                                     <div style={{ display: 'flex', gap: '15px', marginBottom: '15px', fontSize: '0.85rem', color: '#999' }}>

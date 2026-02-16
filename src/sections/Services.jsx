@@ -1,13 +1,13 @@
-import React from 'react';
 import { Plane, Package, Users, Globe, Handshake, ArrowRight, CheckCircle } from 'lucide-react';
+import Image from 'next/image';
 import '../styles/Services.css';
 
 // Image Imports
-import service1 from '../assets/images/GSA.webp';
-import service2 from '../assets/images/cargo-trends.webp';
-import service3 from '../assets/images/airline.webp';
-import service4 from '../assets/images/servie.webp';
-import service5 from '../assets/images/part.webp';
+const service1 = '/images/GSA.webp';
+const service2 = '/images/cargo-trends.webp';
+const service3 = '/images/airline.webp';
+const service4 = '/images/servie.webp';
+const service5 = '/images/part.webp';
 
 const Services = () => {
     const services = [
@@ -66,8 +66,8 @@ const Services = () => {
                     {services.map((service, index) => (
                         <div className={`service-row ${index % 2 !== 0 ? 'reverse' : ''}`} key={index}>
                             <div className="service-image-col">
-                                <div className="image-wrapper">
-                                    <img src={service.image} alt={service.title} loading="lazy" />
+                                <div className="image-wrapper" style={{ position: 'relative', height: '100%', minHeight: '300px' }}>
+                                    <Image src={service.image} alt={service.title} fill style={{ objectFit: 'cover' }} />
                                 </div>
                             </div>
                             <div className="service-content-col">

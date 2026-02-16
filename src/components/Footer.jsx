@@ -1,8 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Facebook, Linkedin, Twitter, Mail, Phone, MapPin, ChevronRight, Globe, Clock } from 'lucide-react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { Linkedin, Twitter, Mail, Phone, MapPin, Clock } from 'lucide-react';
 import '../styles/Footer.css';
-import logo from '../assets/logo.webp';
+
+const logo = '/images/logo.webp';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -14,8 +16,8 @@ const Footer = () => {
                 <div className="footer-col">
                     <div className="footer-logo-box">
                         <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-                            <div style={{ background: 'white', padding: '5px', borderRadius: '4px' }}>
-                                <img src={logo} alt="Trident" style={{ width: '40px', height: 'auto' }} loading="lazy" />
+                            <div style={{ background: 'white', padding: '5px', borderRadius: '4px', position: 'relative', width: '50px', height: '50px' }}>
+                                <Image src={logo} alt="Trident" fill style={{ objectFit: 'contain', padding: '5px' }} />
                             </div>
                             <div style={{ display: 'flex', flexDirection: 'column', lineHeight: '1.1' }}>
                                 <span style={{ fontSize: '24px', fontWeight: '800', color: 'white', letterSpacing: '1px' }}>TRIDENT</span>
@@ -50,10 +52,10 @@ const Footer = () => {
                 <div className="footer-col">
                     <h3>Quick Links</h3>
                     <ul className="footer-links">
-                        <li><Link to="/about">About Us</Link></li>
-                        <li><Link to="/services">Services</Link></li>
-                        <li><Link to="/team">Our Team</Link></li>
-                        <li><Link to="/contact">Contact</Link></li>
+                        <li><Link href="/about">About Us</Link></li>
+                        <li><Link href="/services">Services</Link></li>
+                        <li><Link href="/team">Our Team</Link></li>
+                        <li><Link href="/contact">Contact</Link></li>
                     </ul>
                 </div>
 
@@ -61,9 +63,9 @@ const Footer = () => {
                 <div className="footer-col">
                     <h3>Useful Links</h3>
                     <ul className="footer-links">
-                        <li><Link to="/contact">Privacy Policy</Link></li>
-                        <li><Link to="/contact">Terms & Conditions</Link></li>
-                        <li><Link to="/faq">FAQ</Link></li>
+                        <li><Link href="/contact">Privacy Policy</Link></li>
+                        <li><Link href="/contact">Terms & Conditions</Link></li>
+                        <li><Link href="/faq">FAQ</Link></li>
                     </ul>
                 </div>
 

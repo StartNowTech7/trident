@@ -1,11 +1,13 @@
+'use client';
 import React, { useState } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { useRouter, usePathname } from 'next/navigation';
 import { LayoutDashboard, Users, Plane, CircleHelp, MessageSquare, LogOut, Star, Menu, X } from 'lucide-react';
 import '../styles/Admin.css';
 
 const AdminLayout = ({ children }) => {
-    const location = useLocation();
-    const navigate = useNavigate();
+    const pathname = usePathname();
+    const router = useRouter();
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     const menuItems = [
@@ -18,7 +20,7 @@ const AdminLayout = ({ children }) => {
     ];
 
     const handleLogout = () => {
-        navigate('/admin/login');
+        router.push('/admin/login');
     };
 
     const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
@@ -47,8 +49,8 @@ const AdminLayout = ({ children }) => {
                     {menuItems.map((item) => (
                         <Link
                             key={item.path}
-                            to={item.path}
-                            className={`admin-nav-item ${location.pathname === item.path ? 'active' : ''}`}
+                            href={item.path}
+                            className={`admin-nav-item ${pathname === item.path ? 'active' : ''}`}
                             onClick={() => setIsSidebarOpen(false)}
                         >
                             {item.icon}
