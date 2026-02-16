@@ -5,24 +5,28 @@ import '../styles/PageHeader.css';
 import defaultBg from '../assets/images/cta-bg.webp';
 
 const PageHeader = ({ title, subtitle, bgImage, pcBgImage, mobileBgImage }) => {
+    const [imageLoaded, setImageLoaded] = useState(false);
+
     return (
         <header className="page-header">
-            <div className="header-image-container">
+            <div className={`header-image-container ${imageLoaded ? 'loaded' : ''}`}>
                 <Image
                     src={pcBgImage || bgImage || defaultBg}
                     alt={title}
                     fill
                     priority
+                    onLoad={() => setImageLoaded(true)}
                     style={{ objectFit: 'cover' }}
-                    className="header-bg pc-header-bg"
+                    className={`header-bg pc-header-bg ${imageLoaded ? 'loaded' : ''}`}
                 />
                 <Image
                     src={mobileBgImage || bgImage || defaultBg}
                     alt={title}
                     fill
                     priority
+                    onLoad={() => setImageLoaded(true)}
                     style={{ objectFit: 'cover' }}
-                    className="header-bg mobile-header-bg"
+                    className={`header-bg mobile-header-bg ${imageLoaded ? 'loaded' : ''}`}
                 />
             </div>
             <div className="header-overlay"></div>
