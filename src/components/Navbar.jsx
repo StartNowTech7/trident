@@ -35,7 +35,7 @@ const Navbar = () => {
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
-
+// navbar
     return (
         <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${isMenuOpen ? 'menu-open' : ''}`}>
             <Link href="/" className="navbar-logo">
@@ -45,6 +45,7 @@ const Navbar = () => {
                     <span className="brand-sub">Aviation Services</span>
                 </div>
             </Link>
+         
 
             <button className="mobile-menu-toggle" onClick={toggleMenu} aria-label="Toggle Menu">
                 {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
