@@ -595,6 +595,10 @@
         font-size: 2.2rem;
     }
 
+    .feature-cards {
+        order: 2; /* Move cards below text on mobile */
+    }
+
     .about-images {
         height: 400px;
         order: -1;
@@ -604,6 +608,11 @@
         max-width: 500px;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .skills-image {
+        height: 400px;
+        order: -1;
     }
 
     .about-images img.img-1 {
@@ -651,6 +660,10 @@
 
     .feature-card {
         padding: 20px;
+    }
+
+    .skills-image {
+        height: 300px;
     }
 
     .cta-banner h2 {
@@ -705,6 +718,10 @@
 
     .about-features {
         grid-template-columns: 1fr;
+    }
+
+    .skills-image {
+        height: 250px;
     }
 
     .feature-card {

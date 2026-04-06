@@ -15,6 +15,7 @@ const PageHeader = ({ title, subtitle, bgImage, pcBgImage, mobileBgImage }) => {
                     alt={title}
                     fill
                     priority
+                    unoptimized={true}
                     onLoad={() => setImageLoaded(true)}
                     style={{ objectFit: 'cover' }}
                     className={`header-bg pc-header-bg ${imageLoaded ? 'loaded' : ''}`}
@@ -24,6 +25,7 @@ const PageHeader = ({ title, subtitle, bgImage, pcBgImage, mobileBgImage }) => {
                     alt={title}
                     fill
                     priority
+                    unoptimized={true}
                     onLoad={() => setImageLoaded(true)}
                     style={{ objectFit: 'cover' }}
                     className={`header-bg mobile-header-bg ${imageLoaded ? 'loaded' : ''}`}

@@ -7,31 +7,14 @@ import '../styles/Hero.css';
 
 
 const Hero = () => {
-    const [heroImage, setHeroImage] = React.useState('/images/hero-bg.webp');
-
-    React.useEffect(() => {
-        const handleResize = () => {
-            // Using a slightly different image for PC if needed, 
-            // but for now setting up the framework to switch Hero images
-            if (window.innerWidth <= 768) {
-                setHeroImage('/images/hero-bg.webp'); // Mobile image
-            } else {
-                setHeroImage('/images/hero-bg.webp'); // PC image (can be replaced with a PC-specific one)
-            }
-        };
-
-        handleResize();
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-
     return (
         <section className="hero" id="home">
             <Image
-                src={heroImage}
+                src="/images/hero-bg.webp"
                 alt="Aviation background"
                 fill
                 priority
+                unoptimized={true}
                 className="hero-bg-image"
                 style={{ objectFit: 'cover' }}
             />
