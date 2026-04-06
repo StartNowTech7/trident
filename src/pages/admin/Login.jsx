@@ -4,6 +4,8 @@ import { useRouter } from 'next/navigation';
 import { supabase } from '../../lib/supabase';
 import '../../styles/Admin.css';
 
+const ADMIN_EMAIL = 'startnowtech.info@gmail.com';
+
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -16,16 +18,28 @@ const Login = () => {
         setLoading(true);
         setError(null);
 
-        const { error } = await supabase.auth.signInWithPassword({
-            email,
-            password,
-        });
-
-        if (error) {
-            setError(error.message);
+        // Access Restriction: Only allow the authorized admin email
+        if (email.toLowerCase() !== ADMIN_EMAIL.toLowerCase()) {
+            setError('Access Denied: Only authorized administrators can sign in.');
             setLoading(false);
-        } else {
-            router.push('/admin/dashboard');
+            return;
+        }
+
+        try {
+            const { data, error: loginError } = await supabase.auth.signInWithPassword({
+                email: email.toLowerCase(),
+                password: password,
+            });
+
+            if (loginError) throw loginError;
+
+            if (data.session) {
+                router.push('/admin/dashboard');
+            }
+        } catch (err) {
+            setError(err.message || 'Login failed. Please check your credentials.');
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -35,12 +49,13 @@ const Login = () => {
             height: '100vh',
             alignItems: 'center',
             justifyContent: 'center',
-            backgroundColor: '#f3f4f6'
+            backgroundColor: '#f3f4f6',
+            padding: '20px'
         }}>
             <div className="admin-card" style={{ width: '100%', maxWidth: '400px' }}>
                 <div style={{ textAlign: 'center', marginBottom: '30px' }}>
-                    <h2 style={{ color: 'var(--color-primary)' }}>Trident Admin</h2>
-                    <p style={{ color: '#666' }}>Please sign in to continue</p>
+                    <h2 style={{ color: 'var(--color-primary)', fontSize: '1.8rem', fontWeight: '800' }}>Trident Admin</h2>
+                    <p style={{ color: '#666' }}>Sign in to your administrator account</p>
                 </div>
 
                 {error && (
@@ -50,7 +65,8 @@ const Login = () => {
                         color: '#b91c1c',
                         borderRadius: '6px',
                         marginBottom: '20px',
-                        fontSize: '0.9rem'
+                        fontSize: '0.9rem',
+                        border: '1px solid #fecaca'
                     }}>
                         {error}
                     </div>
@@ -58,15 +74,17 @@ const Login = () => {
 
                 <form onSubmit={handleLogin}>
                     <div style={{ marginBottom: '20px' }}>
-                        <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>Email Address</label>
+                        <label style={{ display: 'block', marginBottom: '8px', fontWeight: '600', color: '#374151' }}>Admin Email</label>
                         <input
                             type="email"
-                            className="form-control"
+                            placeholder="admin@tasglobals.com"
                             style={{
                                 width: '100%',
-                                padding: '12px',
-                                border: '1px solid #d1d5db',
-                                borderRadius: '6px'
+                                padding: '12px 16px',
+                                border: '2px solid #e5e7eb',
+                                borderRadius: '8px',
+                                fontSize: '1rem',
+                                transition: 'border-color 0.2s'
                             }}
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
@@ -74,15 +92,17 @@ const Login = () => {
                         />
                     </div>
                     <div style={{ marginBottom: '30px' }}>
-                        <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>Password</label>
+                        <label style={{ display: 'block', marginBottom: '8px', fontWeight: '600', color: '#374151' }}>Password</label>
                         <input
                             type="password"
-                            className="form-control"
+                            placeholder="••••••••"
                             style={{
                                 width: '100%',
-                                padding: '12px',
-                                border: '1px solid #d1d5db',
-                                borderRadius: '6px'
+                                padding: '12px 16px',
+                                border: '2px solid #e5e7eb',
+                                borderRadius: '8px',
+                                fontSize: '1rem',
+                                transition: 'border-color 0.2s'
                             }}
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
@@ -93,10 +113,15 @@ const Login = () => {
                         type="submit"
                         disabled={loading}
                         className="admin-btn admin-btn-primary"
-                        style={{ width: '100%', padding: '14px' }}
+                        style={{ width: '100%', padding: '14px', borderRadius: '8px', fontWeight: '700' }}
                     >
-                        {loading ? 'Signing in...' : 'Sign In'}
+                        {loading ? 'Authenticating...' : 'Sign In'}
                     </button>
+                    <div style={{ marginTop: '20px', textAlign: 'center' }}>
+                        <p style={{ fontSize: '0.85rem', color: '#666' }}>
+                            Restricted access for <strong>{ADMIN_EMAIL}</strong>
+                        </p>
+                    </div>
                 </form>
             </div>
         </div>

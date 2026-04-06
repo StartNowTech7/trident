@@ -154,7 +154,7 @@ const Contact = () => {
             <div className="contact-map" ref={mapRef}>
                 {loadMap ? (
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.77066068364!2d104.91924157584102!3d11.568301544046183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310951468171095d%3A0xe5469ad011884ea8!2sCanadia%20Bank%20Tower!5e0!3m2!1sen!2skh!4v1711123456789!5m2!1sen!2skh"
+                        src="https://maps.google.com/maps?q=Canadia%20Bank%20Tower,%20Monivong%20Blvd,%20Phnom%20Penh&t=&z=16&ie=UTF8&iwloc=&output=embed"
                         width="100%"
                         height="450"
                         style={{ border: 0, borderRadius: '12px', boxShadow: '0 10px 40px rgba(0,0,0,0.1)' }}

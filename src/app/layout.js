@@ -5,7 +5,7 @@ import LayoutWrapper from '../components/LayoutWrapper';
 const outfit = Outfit({ subsets: ['latin'] });
 
 export const metadata = {
-    metadataBase: new URL('https://trident-aviation.vercel.app'),
+    metadataBase: new URL('https://www.tasglobals.com'),
     title: {
         default: 'Trident Aviation Services - Professional Aviation Solutions',
         template: '%s | Trident Aviation Services'
@@ -28,7 +28,7 @@ export const metadata = {
     openGraph: {
         title: 'Trident Aviation Services',
         description: 'Professional Aviation GSA & CSA Services',
-        url: 'https://trident-aviation.vercel.app',
+        url: 'https://www.tasglobals.com',
         siteName: 'Trident Aviation Services',
         images: [
             {
@@ -49,9 +49,42 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+    const jsonLd = {
+        '@context': 'https://schema.org',
+        '@graph': [
+            {
+                '@type': 'Organization',
+                '@id': 'https://www.tasglobals.com/#organization',
+                name: 'Trident Aviation Services',
+                url: 'https://www.tasglobals.com',
+                logo: 'https://www.tasglobals.com/logo.png',
+                contactPoint: {
+                    '@type': 'ContactPoint',
+                    telephone: '+94 11 234 5678',
+                    contactType: 'customer service'
+                }
+            },
+            {
+                '@type': 'WebSite',
+                '@id': 'https://www.tasglobals.com/#website',
+                url: 'https://www.tasglobals.com',
+                name: 'Trident Aviation Services',
+                potentialAction: {
+                    '@type': 'SearchAction',
+                    target: 'https://www.tasglobals.com/search?q={search_term_string}',
+                    'query-input': 'required name=search_term_string'
+                }
+            }
+        ]
+    };
+
     return (
         <html lang="en">
             <body className={outfit.className}>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                />
                 <LayoutWrapper>{children}</LayoutWrapper>
             </body>
         </html>

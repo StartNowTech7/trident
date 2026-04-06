@@ -11,6 +11,8 @@ import FAQ from './pages/FAQ';
 import Pricing from './pages/Pricing';
 import Blog from './pages/Blog';
 import WhyChooseUsPage from './pages/WhyChooseUs';
+import PartnerAirlines from './pages/PartnerAirlines';
+import UsefulTools from './pages/UsefulTools';
 import './index.css';
 
 // Custom Scroll Manager to handle restoration and route changes manually
@@ -92,6 +94,7 @@ import Login from './pages/admin/Login';
 import ManageServices from './pages/admin/ManageServices';
 import ManageTeam from './pages/admin/ManageTeam';
 import ManageFAQ from './pages/admin/ManageFAQ';
+import ManagePartners from './pages/admin/ManagePartners';
 import ManageTestimonials from './pages/admin/ManageTestimonials';
 import Inbox from './pages/admin/Inbox';
 import { supabase } from './lib/supabase';
@@ -100,6 +103,7 @@ import { supabase } from './lib/supabase';
 const AuthGuard = ({ children }) => {
   const [session, setSession] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
+  const AUTHORIZED_EMAIL = 'startnowtech.info@gmail.com';
 
   React.useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -115,7 +119,7 @@ const AuthGuard = ({ children }) => {
   }, []);
 
   if (loading) return <div>Loading...</div>;
-  if (!session) return <Login />;
+  if (!session || session.user.email !== AUTHORIZED_EMAIL) return <Login />;
 
   return children;
 };
@@ -136,6 +140,8 @@ function App() {
           <Route path="/pricing" element={<><Navbar /><Pricing /><Footer /></>} />
           <Route path="/blog" element={<><Navbar /><Blog /><Footer /></>} />
           <Route path="/why-choose-us" element={<><Navbar /><WhyChooseUsPage /><Footer /></>} />
+          <Route path="/partner-airlines" element={<><Navbar /><PartnerAirlines /><Footer /></>} />
+          <Route path="/useful-tools" element={<><Navbar /><UsefulTools /><Footer /></>} />
 
           {/* Admin Routes */}
           <Route path="/admin/login" element={<Login />} />
@@ -144,6 +150,7 @@ function App() {
           <Route path="/admin/services" element={<AuthGuard><ManageServices /></AuthGuard>} />
           <Route path="/admin/team" element={<AuthGuard><ManageTeam /></AuthGuard>} />
           <Route path="/admin/faq" element={<AuthGuard><ManageFAQ /></AuthGuard>} />
+          <Route path="/admin/partners" element={<AuthGuard><ManagePartners /></AuthGuard>} />
           <Route path="/admin/testimonials" element={<AuthGuard><ManageTestimonials /></AuthGuard>} />
           <Route path="/admin/inbox" element={<AuthGuard><Inbox /></AuthGuard>} />
         </Routes>

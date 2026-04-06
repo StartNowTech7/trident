@@ -60,6 +60,8 @@ const Navbar = () => {
                     </ul>
                 </li>
                 <li className="nav-item"><Link href="/services" onClick={() => setIsMenuOpen(false)}>Services</Link></li>
+                <li className="nav-item"><Link href="/partner-airlines" onClick={() => setIsMenuOpen(false)}>Partner Airlines</Link></li>
+                <li className="nav-item"><Link href="/useful-tools" onClick={() => setIsMenuOpen(false)}>Useful Tools</Link></li>
 
                 <li className={`nav-item ${activeDropdown === 1 ? 'active' : ''}`}>
                     <span className="dropdown-trigger" onClick={() => toggleDropdown(1)}>Pages <ChevronDown size={14} strokeWidth={3} /></span>
@@ -73,16 +75,14 @@ const Navbar = () => {
 
                 <li className="nav-item"><Link href="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link></li>
                 <li className="nav-mobile-cta">
-                    <a href="#" className="nav-track-btn" onClick={() => setIsMenuOpen(false)}>TRACK ORDER</a>
-                    <Link href="/contact" className="btn btn-primary" onClick={() => setIsMenuOpen(false)}>GET A QUOTE</Link>
+                    <a href="https://www.track-trace.com/aircargo" target="_blank" rel="noopener noreferrer" className="nav-track-btn" onClick={() => setIsMenuOpen(false)}>TRACK ORDER</a>
                 </li>
             </ul>
 
 
 
             <div className="navbar-actions">
-                <a href="#" className="nav-track-btn">TRACK ORDER</a>
-                <Link href="/contact" className="btn btn-primary nav-cta">GET A QUOTE</Link>
+                <a href="https://www.track-trace.com/aircargo" target="_blank" rel="noopener noreferrer" className="nav-track-btn">TRACK ORDER</a>
             </div>
         </nav >
     );

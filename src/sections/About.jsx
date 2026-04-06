@@ -64,40 +64,40 @@ const About = () => {
                         <h2>The Principles That Guide Us</h2>
                     </div>
 
-                    <div className="bento-grid">
-                        <div className="bento-item main theme-sustainability">
-                            <div className="bento-icon"><Leaf size={40} /></div>
+                    <div className="principles-grid">
+                        <div className="principles-item main theme-sustainability">
+                            <div className="principles-icon"><Leaf size={40} /></div>
                             <h3>Sustainability</h3>
                             <p>Minimizing our environmental impact while creating long-term value through responsible aviation practices.</p>
                         </div>
 
-                        <div className="bento-item compact theme-customer">
-                            <div className="bento-icon"><Users size={32} /></div>
-                            <div className="bento-content">
+                        <div className="principles-item compact theme-customer">
+                            <div className="principles-icon"><Users size={32} /></div>
+                            <div className="principles-content">
                                 <h3>Customer-Centricity</h3>
                                 <p>Delivering personalized solutions built on trust.</p>
                             </div>
                         </div>
 
-                        <div className="bento-item compact theme-innovation">
-                            <div className="bento-icon"><Lightbulb size={32} /></div>
-                            <div className="bento-content">
+                        <div className="principles-item compact theme-innovation">
+                            <div className="principles-icon"><Lightbulb size={32} /></div>
+                            <div className="principles-content">
                                 <h3>Innovation</h3>
                                 <p>Embracing advanced technologies for the future.</p>
                             </div>
                         </div>
 
-                        <div className="bento-item wide theme-excellence">
-                            <div className="bento-icon"><Award size={36} /></div>
-                            <div className="bento-content">
+                        <div className="principles-item wide theme-excellence">
+                            <div className="principles-icon"><Award size={36} /></div>
+                            <div className="principles-content">
                                 <h3>Excellence</h3>
                                 <p>We consistently exceed expectations through professional dedication and a relentless pursuit of perfection.</p>
                             </div>
                         </div>
 
-                        <div className="bento-item theme-integrity">
-                            <div className="bento-icon"><ShieldCheck size={36} /></div>
-                            <div className="bento-content">
+                        <div className="principles-item theme-integrity">
+                            <div className="principles-icon"><ShieldCheck size={36} /></div>
+                            <div className="principles-content">
                                 <h3>Integrity</h3>
                                 <p>Upholding the highest standards of honesty and ethics is our foundation. We believe in transparency and shared commitment.</p>
                             </div>

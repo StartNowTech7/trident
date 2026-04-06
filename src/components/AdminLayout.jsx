@@ -15,6 +15,7 @@ const AdminLayout = ({ children }) => {
         { path: '/admin/services', icon: <Plane size={20} />, label: 'Services' },
         { path: '/admin/team', icon: <Users size={20} />, label: 'Team' },
         { path: '/admin/faq', icon: <CircleHelp size={20} />, label: 'FAQ' },
+        { path: '/admin/partners', icon: <Users size={20} />, label: 'Partners' },
         { path: '/admin/testimonials', icon: <Star size={20} />, label: 'Testimonials' },
         { path: '/admin/inbox', icon: <MessageSquare size={20} />, label: 'Inbox' },
     ];

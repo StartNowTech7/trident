@@ -9,7 +9,8 @@ const Dashboard = () => {
         services: 0,
         team: 0,
         faqs: 0,
-        messages: 0
+        messages: 0,
+        partners: 0
     });
 
     useEffect(() => {
@@ -17,18 +18,20 @@ const Dashboard = () => {
     }, []);
 
     const fetchStats = async () => {
-        const [services, team, faqs, messages] = await Promise.all([
+        const [services, team, faqs, messages, partners] = await Promise.all([
             supabase.from('services').select('*', { count: 'exact', head: true }),
             supabase.from('team').select('*', { count: 'exact', head: true }),
             supabase.from('faqs').select('*', { count: 'exact', head: true }),
-            supabase.from('messages').select('*', { count: 'exact', head: true })
+            supabase.from('messages').select('*', { count: 'exact', head: true }),
+            supabase.from('partners').select('*', { count: 'exact', head: true })
         ]);
 
         setStats({
             services: services.count || 0,
             team: team.count || 0,
             faqs: faqs.count || 0,
-            messages: messages.count || 0
+            messages: messages.count || 0,
+            partners: partners.count || 0
         });
     };
 
@@ -37,6 +40,7 @@ const Dashboard = () => {
         { label: 'Team Members', value: stats.team, icon: <Users size={24} />, color: '#C5A059' },
         { label: 'Total FAQs', value: stats.faqs, icon: <CircleHelp size={24} />, color: '#0A3D26' },
         { label: 'Unread Messages', value: stats.messages, icon: <MessageSquare size={24} />, color: '#C5A059' },
+        { label: 'Partner Airlines', value: stats.partners, icon: <Plane size={24} />, color: '#0A3D26' },
     ];
 
     return (

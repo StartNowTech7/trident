@@ -1,7 +1,7 @@
 import React from 'react';
 import Hero from '../sections/Hero';
 import { StatsBar, AboutRedesign, CTABanner, ServicesGridRedesign, ProfessionalSkills, WhyChooseUs, Testimonials } from '../sections/HomeSections';
-import Contact from '../sections/Contact';
+import Partners from '../sections/Partners';
 
 const Home = () => {
     return (
@@ -14,7 +14,7 @@ const Home = () => {
             <ProfessionalSkills />
             <WhyChooseUs />
             <Testimonials />
-            <Contact />
+            <Partners />
         </>
     );
 };

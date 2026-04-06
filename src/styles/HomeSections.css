@@ -245,7 +245,7 @@
 /* CTA Banner */
 .cta-banner {
     background: linear-gradient(rgba(15, 30, 60, 0.85), rgba(15, 30, 60, 0.85)),
-        url('../assets/images/aviation-2.webp') center/cover;
+        url('/images/aviation-2.webp') center/cover;
     padding: 100px 20px;
     text-align: center;
     color: white;
@@ -268,7 +268,7 @@
 /* Services Grid Redesign */
 .services-grid-redesign {
     padding: 120px 20px;
-    background: url('../assets/images/premium_aviation_bg.webp') center/cover no-repeat;
+    background: url('/images/premium_aviation_bg.webp') center/cover no-repeat;
     background-attachment: fixed;
     position: relative;
     overflow: hidden;
@@ -496,7 +496,7 @@
 .skills-section {
     padding: 100px 20px;
     background: linear-gradient(rgba(244, 247, 246, 0.95), rgba(244, 247, 246, 0.95)),
-        url('../assets/images/skills-bg.webp') center/cover no-repeat;
+        url('/images/skills-bg.webp') center/cover no-repeat;
     overflow: hidden;
 }
 
@@ -723,7 +723,7 @@
     padding: 120px 20px;
     background:
         linear-gradient(135deg, rgba(70, 81, 76, 0.92) 0%, rgba(10, 61, 38, 0.88) 100%),
-        url('../assets/images/services-premium-bg.webp') center/cover no-repeat;
+        url('/images/services-premium-bg.webp') center/cover no-repeat;
     position: relative;
     overflow: hidden;
 }

@@ -107,3 +107,23 @@ CREATE POLICY "Authenticated Upload Access" ON storage.objects FOR INSERT TO aut
 -- 3. Allow authenticated users to update/delete their images
 DROP POLICY IF EXISTS "Authenticated Update/Delete Access" ON storage.objects;
 CREATE POLICY "Authenticated Update/Delete Access" ON storage.objects FOR ALL TO authenticated USING (bucket_id = 'team-photos');
+
+-- 7. Partner Airlines Table
+CREATE TABLE IF NOT EXISTS public.partners (
+    id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+    name TEXT NOT NULL,
+    logo_url TEXT,
+    website_url TEXT,
+    "order" INTEGER DEFAULT 0,
+    created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Enable RLS
+ALTER TABLE public.partners ENABLE ROW LEVEL SECURITY;
+
+-- Create Policies
+DROP POLICY IF EXISTS "Allow public read-only access for partners" ON public.partners;
+CREATE POLICY "Allow public read-only access for partners" ON public.partners FOR SELECT USING (true);
+
+DROP POLICY IF EXISTS "Allow authenticated all partners" ON public.partners;
+CREATE POLICY "Allow authenticated all partners" ON public.partners FOR ALL TO authenticated USING (true) WITH CHECK (true);

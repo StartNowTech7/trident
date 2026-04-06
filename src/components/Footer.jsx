@@ -28,23 +28,14 @@ const Footer = () => {
                     <p style={{ marginTop: '20px', lineHeight: '1.7', color: '#cbd5e1' }}>
                         Expert airline representation and GSA services connecting global carriers to local markets with precision.
                     </p>
-                    <div className="footer-info-list">
-                        <div className="footer-info-item">
-                            <MapPin size={18} style={{ minWidth: '18px' }} />
-                            <span>Building 315, Canadia Bank Tower, Floor 18, Office Number 1845 ResCo-work03, Monivong Blvd., Corner of Ang Dong Street, Phum 1, Sangkat Wat Phnom, Khan Daun Penh, Phnom Penh Capital</span>
+                    <div className="work-hours-box" style={{ marginTop: '20px' }}>
+                        <div className="hours-item" style={{ marginBottom: '10px' }}>
+                            <Clock size={20} />
+                            <span>9 AM - 5 PM, Monday - Saturday</span>
                         </div>
-                        <div className="footer-info-item">
-                            <Mail size={18} />
-                            <a href="mailto:Sales@tasglobals.com" className="footer-link">Sales@tasglobals.com</a>
-                        </div>
-                        <div className="footer-info-item">
-                            <Phone size={18} />
-                            <a href="tel:+94761277254" className="footer-link">+94 76 127 7254</a>
-                        </div>
-                        <div className="footer-info-item">
-                            <Phone size={18} />
-                            <a href="tel:+85593712761" className="footer-link">+855 93 712 761</a>
-                        </div>
+                        <p style={{ color: '#cbd5e1', fontSize: '0.9rem' }}>
+                            Our support desk is available during work hours for all your aviation requirements.
+                        </p>
                     </div>
                 </div>
 
@@ -69,26 +60,25 @@ const Footer = () => {
                     </ul>
                 </div>
 
-                {/* Column 4: Work Hours & CTA */}
+                {/* Column 4: Contact Info */}
                 <div className="footer-col">
-                    <h3>Work Hours</h3>
-                    <div className="work-hours-box">
-                        <div className="hours-item">
-                            <Clock size={20} />
-                            <span>9 AM - 5 PM, Monday - Saturday</span>
+                    <h3>Contact Us</h3>
+                    <div className="footer-info-list" style={{ marginTop: '0' }}>
+                        <div className="footer-info-item">
+                            <MapPin size={18} style={{ minWidth: '18px' }} />
+                            <span>Building 315, Canadia Bank Tower, Floor 18, Office Number 1845 ResCo-work03, Monivong Blvd., Corner of Ang Dong Street, Phum 1, Sangkat Wat Phnom, Khan Daun Penh, Phnom Penh Capital</span>
                         </div>
-                        <p style={{ color: '#cbd5e1', fontSize: '0.9rem' }}>
-                            Our support desk is available during work hours for all your aviation requirements.
-                        </p>
-                        <div className="footer-cta-numbers">
-                            <a href="tel:+94761277254" className="footer-cta-btn">
-                                <Phone size={20} fill="currentColor" />
-                                +94 76 127 7254
-                            </a>
-                            <a href="tel:+85593712761" className="footer-cta-btn">
-                                <Phone size={20} fill="currentColor" />
-                                +855 93 712 761
-                            </a>
+                        <div className="footer-info-item">
+                            <Mail size={18} />
+                            <a href="mailto:Sales@tasglobals.com" className="footer-link">Sales@tasglobals.com</a>
+                        </div>
+                        <div className="footer-info-item">
+                            <Phone size={18} />
+                            <a href="tel:+94761277254" className="footer-link">+94 76 127 7254</a>
+                        </div>
+                        <div className="footer-info-item">
+                            <Phone size={18} />
+                            <a href="tel:+85593712761" className="footer-link">+855 93 712 761</a>
                         </div>
                     </div>
                 </div>
