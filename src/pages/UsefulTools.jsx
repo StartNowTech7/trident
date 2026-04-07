@@ -126,7 +126,6 @@ const UsefulTools = () => {
                                 return (
                                     <div key={idx} className="bento-card image-filler-card" style={{ backgroundImage: `url(${tool.image})` }}>
                                         <div className="filler-overlay"></div>
-                                        <span className="filler-label">{tool.label}</span>
                                     </div>
                                 );
                             }
