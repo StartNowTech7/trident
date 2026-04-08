@@ -8,7 +8,7 @@ const TopBar = () => {
             <div className="top-bar-info">
                 <div className="top-bar-item">
                     <Mail size={14} />
-                    <a href="mailto:Sales@tasglobals.com" className="top-bar-link">Sales@tasglobals.com</a>
+                    <a href="mailto:info@tasglobals.com" className="top-bar-link">info@tasglobals.com</a>
                 </div>
                 <div className="top-bar-item">
                     <Phone size={14} />

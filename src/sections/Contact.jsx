@@ -115,7 +115,7 @@ const Contact = () => {
                             <div className="contact-icon"><Mail size={24} /></div>
                             <div className="contact-text">
                                 <h4>Email Address</h4>
-                                <p><a href="mailto:Sales@tasglobals.com" style={{ color: 'inherit', textDecoration: 'none' }}>Sales@tasglobals.com</a></p>
+                                <p><a href="mailto:info@tasglobals.com" style={{ color: 'inherit', textDecoration: 'none' }}>info@tasglobals.com</a></p>
                             </div>
                         </div>
                     </div>

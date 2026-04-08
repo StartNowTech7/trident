@@ -65,9 +65,10 @@ const Footer = () => {
                         </div>
                         <div className="footer-info-item">
                             <Mail size={18} />
-                            <a href="mailto:Sales@tasglobals.com" className="footer-link">Sales@tasglobals.com</a>
+                            <a href="mailto:info@tasglobals.com" className="footer-link">info@tasglobals.com</a>
                         </div>
-                        <div className="footer-info-item">
+                        <div className="footer-info-item" style={{ alignItems: 'flex-start' }}>
+                            <MapPin size={18} style={{ marginTop: '2px', flexShrink: 0 }} />
                             <span>SV35, No.35, Floor No.7, Unit #707, Mao Tse Toung Blv, Phum 9, Sangkat Boeung Keng Kang1, Khan Boeung Keng Kang, Phnom Penh, Cambodia</span>
                         </div>
                     </div>
