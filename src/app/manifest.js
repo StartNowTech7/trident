@@ -24,12 +24,12 @@ export default function manifest() {
       {
         name: 'Our Services',
         url: '/services',
-        icons: [{ src: '/favicon.ico', sizes: '192x192' }],
+        icons: [{ src: '/favicon.png', sizes: '192x192', type: 'image/png' }],
       },
       {
         name: 'Useful Tools',
         url: '/useful-tools',
-        icons: [{ src: '/favicon.ico', sizes: '192x192' }],
+        icons: [{ src: '/favicon.png', sizes: '192x192', type: 'image/png' }],
       },
     ],
   }

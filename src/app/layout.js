@@ -19,9 +19,15 @@ export const metadata = {
         canonical: '/',
     },
     icons: {
-        icon: '/favicon.ico',
-        shortcut: '/favicon.ico',
-        apple: '/favicon.ico',
+        icon: [
+            { url: '/favicon.ico', sizes: 'any' },
+            { url: '/favicon.png', sizes: '192x192', type: 'image/png' },
+            { url: '/favicon.png', sizes: '512x512', type: 'image/png' },
+        ],
+        shortcut: '/favicon.png',
+        apple: [
+            { url: '/favicon.png', sizes: '180x180', type: 'image/png' },
+        ],
         other: [
             {
                 rel: 'search',
