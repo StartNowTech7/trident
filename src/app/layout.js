@@ -68,6 +68,7 @@ export default function RootLayout({ children }) {
                 '@type': 'Organization',
                 '@id': 'https://www.tasglobals.com/#organization',
                 name: 'Trident Aviation Services',
+                alternateName: ['Trident Aviation', 'Trident Aviation Service', 'TAS'],
                 url: 'https://www.tasglobals.com',
                 logo: '/favicon.png',
                 contactPoint: {
@@ -81,6 +82,7 @@ export default function RootLayout({ children }) {
                 '@id': 'https://www.tasglobals.com/#website',
                 url: 'https://www.tasglobals.com',
                 name: 'Trident Aviation Services',
+                alternateName: ['Trident Aviation', 'TAS'],
                 image: '/favicon.png',
                 potentialAction: {
                     '@type': 'SearchAction',
