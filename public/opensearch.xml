@@ -3,7 +3,8 @@
   <ShortName>Trident Aviation</ShortName>
   <Description>Search Trident Aviation Services</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://www.tasglobals.com/favicon.ico</Image>
-  <Url type="text/html" method="get" template="https://www.tasglobals.com/search?q={searchTerms}"/>
-  <moz:SearchForm>https://www.tasglobals.com/search</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">/favicon.ico</Image>
+  <Image width="64" height="64" type="image/png">/favicon.png</Image>
+  <Url type="text/html" method="get" template="/search?q={searchTerms}"/>
+  <moz:SearchForm>/search</moz:SearchForm>
 </OpenSearchDescription>

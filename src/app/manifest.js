@@ -10,8 +10,14 @@ export default function manifest() {
     icons: [
       {
         src: '/favicon.ico',
-        sizes: '192x192 512x512',
+        sizes: 'any',
         type: 'image/x-icon',
+      },
+      {
+        src: '/favicon.png',
+        sizes: '192x192 512x512',
+        type: 'image/png',
+        purpose: 'any maskable',
       },
     ],
     shortcuts: [

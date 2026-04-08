@@ -63,7 +63,7 @@ export default function RootLayout({ children }) {
                 '@id': 'https://www.tasglobals.com/#organization',
                 name: 'Trident Aviation Services',
                 url: 'https://www.tasglobals.com',
-                logo: 'https://www.tasglobals.com/logo.png',
+                logo: '/favicon.png',
                 contactPoint: {
                     '@type': 'ContactPoint',
                     telephone: '+94 11 234 5678',
@@ -75,6 +75,7 @@ export default function RootLayout({ children }) {
                 '@id': 'https://www.tasglobals.com/#website',
                 url: 'https://www.tasglobals.com',
                 name: 'Trident Aviation Services',
+                image: '/favicon.png',
                 potentialAction: {
                     '@type': 'SearchAction',
                     target: 'https://www.tasglobals.com/search?q={search_term_string}',
