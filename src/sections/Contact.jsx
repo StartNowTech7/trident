@@ -48,14 +48,29 @@ const Contact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
-        const { error } = await supabase.from('messages').insert([formData]);
-        setLoading(false);
-        if (!error) {
+
+        try {
+            // Send Emails via API
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                console.error('API Error:', errorData);
+                throw new Error(errorData.error || 'Failed to send message');
+            }
+
             setSuccess(true);
             setFormData({ name: '', email: '', subject: 'General Inquiry', message: '' });
             setTimeout(() => setSuccess(false), 5000);
-        } else {
-            alert('Error sending message. Please try again.');
+        } catch (error) {
+            console.error('Submission error:', error);
+            alert(error.message || 'Error sending message. Please try again.');
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -77,11 +92,11 @@ const Contact = () => {
                             <div className="contact-icon"><MapPin size={24} /></div>
                             <div className="contact-text">
                                 <h4>Our Location</h4>
-                                <p>Building 315, Canadia Bank Tower, Floor 18,<br />
-                                    Office Number 1845 ResCo-work03,<br />
-                                    Monivong Blvd., Corner of Ang Dong Street,<br />
-                                    Phum 1, Sangkat Wat Phnom, Khan Daun Penh,<br />
-                                    Phnom Penh Capital</p>
+                                <p>SV35, No.35, Floor No.7, Unit #707,<br />
+                                    Mao Tse Toung Blv, Phum 9,<br />
+                                    Sangkat Boeung Keng Kang1,<br />
+                                    Khan Boeung Keng Kang,<br />
+                                    Phnom Penh, Cambodia</p>
                             </div>
                         </div>
 
@@ -128,6 +143,17 @@ const Contact = () => {
                                 required
                             />
                         </div>
+                        <div style={{ display: 'none' }}>
+                            <label>Leave this field empty</label>
+                            <input
+                                type="text"
+                                name="honeypot"
+                                value={formData.honeypot || ''}
+                                onChange={(e) => setFormData({ ...formData, honeypot: e.target.value })}
+                                tabIndex="-1"
+                                autoComplete="off"
+                            />
+                        </div>
                         <div className="form-group">
                             <label>Message</label>
                             <textarea
@@ -154,7 +180,7 @@ const Contact = () => {
             <div className="contact-map" ref={mapRef}>
                 {loadMap ? (
                     <iframe
-                        src="https://maps.google.com/maps?q=Canadia%20Bank%20Tower,%20Monivong%20Blvd,%20Phnom%20Penh&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                        src="https://maps.google.com/maps?q=SV35,%20No.35,%20Mao%20Tse%20Toung%20Blvd,%20Phnom%20Penh&t=&z=16&ie=UTF8&iwloc=&output=embed"
                         width="100%"
                         height="450"
                         style={{ border: 0, borderRadius: '12px', boxShadow: '0 10px 40px rgba(0,0,0,0.1)' }}

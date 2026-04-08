@@ -58,6 +58,7 @@ export const metadata = {
         description: 'Professional Aviation GSA & CSA Services',
         images: ['/images/logo.webp'],
     },
+    manifest: '/manifest.json',
 };
 
 export default function RootLayout({ children }) {

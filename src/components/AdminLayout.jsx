@@ -11,17 +11,17 @@ const AdminLayout = ({ children }) => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     const menuItems = [
-        { path: '/admin/dashboard', icon: <LayoutDashboard size={20} />, label: 'Dashboard' },
-        { path: '/admin/services', icon: <Plane size={20} />, label: 'Services' },
-        { path: '/admin/team', icon: <Users size={20} />, label: 'Team' },
-        { path: '/admin/faq', icon: <CircleHelp size={20} />, label: 'FAQ' },
-        { path: '/admin/partners', icon: <Users size={20} />, label: 'Partners' },
-        { path: '/admin/testimonials', icon: <Star size={20} />, label: 'Testimonials' },
-        { path: '/admin/inbox', icon: <MessageSquare size={20} />, label: 'Inbox' },
+        { path: '/trident-admin-panel/dashboard', icon: <LayoutDashboard size={20} />, label: 'Dashboard' },
+        { path: '/trident-admin-panel/services', icon: <Plane size={20} />, label: 'Services' },
+        { path: '/trident-admin-panel/team', icon: <Users size={20} />, label: 'Team' },
+        { path: '/trident-admin-panel/faq', icon: <CircleHelp size={20} />, label: 'FAQ' },
+        { path: '/trident-admin-panel/partners', icon: <Users size={20} />, label: 'Partners' },
+        { path: '/trident-admin-panel/testimonials', icon: <Star size={20} />, label: 'Testimonials' },
+        { path: '/trident-admin-panel/inbox', icon: <MessageSquare size={20} />, label: 'Inbox' },
     ];
 
     const handleLogout = () => {
-        router.push('/admin/login');
+        router.push('/trident-admin-panel/login');
     };
 
     const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);

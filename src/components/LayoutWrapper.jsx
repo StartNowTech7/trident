@@ -5,7 +5,7 @@ import Footer from './Footer';
 
 const LayoutWrapper = ({ children }) => {
     const pathname = usePathname();
-    const isAdminRoute = pathname?.startsWith('/admin');
+    const isAdminRoute = pathname?.startsWith('/trident-admin-panel');
 
     return (
         <>

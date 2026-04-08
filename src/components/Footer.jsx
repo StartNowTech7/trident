@@ -68,8 +68,7 @@ const Footer = () => {
                             <a href="mailto:Sales@tasglobals.com" className="footer-link">Sales@tasglobals.com</a>
                         </div>
                         <div className="footer-info-item">
-                            <MapPin size={18} style={{ minWidth: '18px' }} />
-                            <span>Building 315, Canadia Bank Tower, Floor 18, Office Number 1845 ResCo-work03, Monivong Blvd., Corner of Ang Dong Street, Phum 1, Sangkat Wat Phnom, Khan Daun Penh, Phnom Penh Capital</span>
+                            <span>SV35, No.35, Floor No.7, Unit #707, Mao Tse Toung Blv, Phum 9, Sangkat Boeung Keng Kang1, Khan Boeung Keng Kang, Phnom Penh, Cambodia</span>
                         </div>
                     </div>
                 </div>

@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import { supabase } from '../../lib/supabase';
 import '../../styles/Admin.css';
 
-const ADMIN_EMAIL = 'startnowtech.info@gmail.com';
+const ADMIN_EMAIL = process.env.NEXT_PUBLIC_ADMIN_EMAIL || 'info@tasglobals.com';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -34,7 +34,8 @@ const Login = () => {
             if (loginError) throw loginError;
 
             if (data.session) {
-                router.push('/admin/dashboard');
+                router.refresh();
+                router.push('/trident-admin-panel/dashboard');
             }
         } catch (err) {
             setError(err.message || 'Login failed. Please check your credentials.');
