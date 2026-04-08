@@ -9,21 +9,21 @@ export default function manifest() {
     theme_color: '#1a365d',
     icons: [
       {
-        src: '/favicon.ico',
+        src: '/favicon.png',
         sizes: '192x192 512x512',
-        type: 'image/x-icon',
+        type: 'image/png',
       },
     ],
     shortcuts: [
       {
         name: 'Our Services',
         url: '/services',
-        icons: [{ src: '/favicon.ico', sizes: '192x192' }],
+        icons: [{ src: '/favicon.png', sizes: '192x192' }],
       },
       {
         name: 'Useful Tools',
         url: '/useful-tools',
-        icons: [{ src: '/favicon.ico', sizes: '192x192' }],
+        icons: [{ src: '/favicon.png', sizes: '192x192' }],
       },
     ],
   }
