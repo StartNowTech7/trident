@@ -69,20 +69,14 @@ const Navbar = () => {
                     <span className="dropdown-trigger" onClick={() => toggleDropdown(0)}>About Us <ChevronDown size={14} strokeWidth={3} /></span>
                     <ul className="dropdown-menu">
                         <li><Link href="/about" onClick={() => setIsMenuOpen(false)}>About Company</Link></li>
+                        <li><Link href="/team" onClick={() => setIsMenuOpen(false)}>Team</Link></li>
                         <li><Link href="/why-choose-us" onClick={() => setIsMenuOpen(false)}>Why Choose Us</Link></li>
+                        <li><Link href="/faq" onClick={() => setIsMenuOpen(false)}>FAQ</Link></li>
                     </ul>
                 </li>
                 <li className="nav-item"><Link href="/services" onClick={() => setIsMenuOpen(false)}>Services</Link></li>
                 <li className="nav-item"><Link href="/partner-airlines" onClick={() => setIsMenuOpen(false)}>Partner Airlines</Link></li>
                 <li className="nav-item"><Link href="/useful-tools" onClick={() => setIsMenuOpen(false)}>Useful Tools</Link></li>
-
-                <li className={`nav-item ${activeDropdown === 1 ? 'active' : ''}`}>
-                    <span className="dropdown-trigger" onClick={() => toggleDropdown(1)}>Pages <ChevronDown size={14} strokeWidth={3} /></span>
-                    <ul className="dropdown-menu">
-                        <li><Link href="/team" onClick={() => setIsMenuOpen(false)}>Team</Link></li>
-                        <li><Link href="/faq" onClick={() => setIsMenuOpen(false)}>FAQ</Link></li>
-                    </ul>
-                </li>
 
 
 

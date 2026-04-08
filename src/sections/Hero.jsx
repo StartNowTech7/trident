@@ -40,7 +40,7 @@ const Hero = () => {
                         <div className="floating-card card-1">
                             <div className="card-icon"><Award size={24} /></div>
                             <div className="card-info">
-                                <h3>15+ Years</h3>
+                                <h3>5+ Years</h3>
                                 <p>Industry Excellence</p>
                             </div>
                         </div>

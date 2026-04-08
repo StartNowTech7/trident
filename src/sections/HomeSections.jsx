@@ -13,7 +13,7 @@ const teamProf = '/images/team-skills.webp';
 
 export const StatsBar = () => {
     const stats = [
-        { number: "15+", label: "Years Experience" },
+        { number: "5+", label: "Years Experience" },
         { number: "50+", label: "Airlines Served" },
         { number: "98%", label: "Client Satisfaction" },
         { number: "24/7", label: "Support Available" }

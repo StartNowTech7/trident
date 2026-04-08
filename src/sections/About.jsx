@@ -18,7 +18,7 @@ const About = () => {
                                 style={{ width: '100%', height: 'auto', borderRadius: '4px' }}
                             />
                             <div className="experience-badge">
-                                <span className="years">15+</span>
+                                <span className="years">5+</span>
                                 <span className="text">Years in Industry</span>
                             </div>
                         </div>

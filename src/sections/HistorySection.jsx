@@ -23,7 +23,7 @@ const HistorySection = () => {
                                     <History size={24} />
                                 </div>
                                 <div>
-                                    <h5>15+ Years</h5>
+                                    <h5>5+ Years</h5>
                                     <p>Industry Expertise</p>
                                 </div>
                             </div>
@@ -48,7 +48,7 @@ const HistorySection = () => {
                             className="history-main-image"
                         />
                         <div className="experience-badge">
-                            <span className="years">15+</span>
+                            <span className="years">5+</span>
                             <span className="text">Years of Excellence</span>
                         </div>
                     </div>
