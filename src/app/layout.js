@@ -15,15 +15,21 @@ export const metadata = {
     authors: [{ name: 'Trident Aviation Services' }],
     creator: 'Trident Aviation Services',
     publisher: 'Trident Aviation Services',
-    formatDetection: {
-        email: false,
-        address: false,
-        telephone: false,
+    alternates: {
+        canonical: '/',
     },
     icons: {
-        icon: '/icon.png',
-        shortcut: '/icon.png',
-        apple: '/icon.png',
+        icon: '/favicon.ico',
+        shortcut: '/favicon.ico',
+        apple: '/favicon.ico',
+        other: [
+            {
+                rel: 'search',
+                type: 'application/opensearchdescription+xml',
+                url: '/opensearch.xml',
+                title: 'Trident Aviation Search',
+            },
+        ],
     },
     openGraph: {
         title: 'Trident Aviation Services',

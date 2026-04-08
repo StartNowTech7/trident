@@ -10,7 +10,8 @@ export default function sitemap() {
       '/services',
       '/team',
       '/useful-tools',
-      '/why-choose-us'
+      '/why-choose-us',
+      '/search'
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

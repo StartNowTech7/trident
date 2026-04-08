@@ -9,9 +9,21 @@ export default function manifest() {
     theme_color: '#1a365d',
     icons: [
       {
-        src: '/icon.png',
+        src: '/favicon.ico',
         sizes: '192x192 512x512',
-        type: 'image/png',
+        type: 'image/x-icon',
+      },
+    ],
+    shortcuts: [
+      {
+        name: 'Our Services',
+        url: '/services',
+        icons: [{ src: '/favicon.ico', sizes: '192x192' }],
+      },
+      {
+        name: 'Useful Tools',
+        url: '/useful-tools',
+        icons: [{ src: '/favicon.ico', sizes: '192x192' }],
       },
     ],
   }
