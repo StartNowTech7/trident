@@ -50,17 +50,28 @@ const Contact = () => {
         setLoading(true);
 
         try {
-            // Send Emails via API
-            const response = await fetch('/api/contact', {
+            // Send Emails via Web3Forms API
+            const response = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json'
+                },
+                body: JSON.stringify({
+                    access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+                    name: formData.name,
+                    email: formData.email,
+                    subject: formData.subject,
+                    message: formData.message,
+                    botcheck: formData.honeypot
+                }),
             });
 
-            if (!response.ok) {
-                const errorData = await response.json();
-                console.error('API Error:', errorData);
-                throw new Error(errorData.error || 'Failed to send message');
+            const result = await response.json();
+
+            if (!result.success) {
+                console.error('Web3Forms Error:', result);
+                throw new Error(result.message || 'Failed to send message');
             }
 
             setSuccess(true);
