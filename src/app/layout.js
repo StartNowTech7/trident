@@ -11,7 +11,7 @@ export const metadata = {
         template: '%s | Trident Aviation Services'
     },
     description: 'Trident Aviation Services provides world-class Airline GSA & CSA services, connecting airlines with markets and customers through reliable, innovative solutions.',
-    keywords: ['aviation services', 'GSA', 'CSA', 'airline representation', 'cargo sales', 'aviation solutions'],
+    keywords: ['Trident', 'Trident Aviation', 'Trident Aviation Services', 'TAS', 'aviation services', 'GSA', 'CSA', 'airline representation', 'cargo sales', 'aviation solutions'],
     authors: [{ name: 'Trident Aviation Services' }],
     creator: 'Trident Aviation Services',
     publisher: 'Trident Aviation Services',
