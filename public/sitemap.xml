@@ -31,6 +31,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.tasglobals.com/travels-and-tours</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.tasglobals.com/team</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

@@ -1,0 +1,864 @@
+/* Trident Travels & Tours Page Styles */
+
+.travels-page {
+    padding-top: 90px;
+    background-color: #ffffff;
+    color: var(--color-text-dark);
+}
+
+/* Shared Section Pill & Typography */
+.tt-pill {
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    border: 1.5px solid rgba(255, 255, 255, 0.75);
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(4px);
+}
+
+.tt-pill-dark {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: rgba(10, 61, 38, 0.06);
+}
+
+.tt-pill-white {
+    border-color: rgba(10, 61, 38, 0.15);
+    color: var(--color-primary);
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.tt-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* 1. Hero / Polaroid Landmark Showcase */
+.tt-hero {
+    position: relative;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    padding: 70px 0 80px;
+    background: linear-gradient(135deg, #f6f4ee 0%, #ebe6da 100%);
+    overflow: hidden;
+}
+
+.tt-hero-bg-image {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.22;
+}
+
+.tt-hero-bg-image img {
+    object-fit: cover;
+}
+
+.tt-hero-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.tt-hero-content .tt-brand-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(10, 61, 38, 0.08);
+    color: var(--color-primary);
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.tt-hero-content h1 {
+    font-size: 3.4rem;
+    line-height: 1.1;
+    color: var(--color-primary);
+    margin-bottom: 18px;
+    font-weight: 800;
+}
+
+.tt-hero-content h1 span {
+    color: var(--color-secondary);
+}
+
+.tt-hero-subtitle {
+    font-size: 1.15rem;
+    line-height: 1.75;
+    color: #374151;
+    margin-bottom: 30px;
+    max-width: 560px;
+}
+
+.tt-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.tt-polaroid-cluster {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    min-height: 340px;
+}
+
+.tt-polaroid {
+    background: #ffffff;
+    padding: 12px 12px 18px;
+    border-radius: 6px;
+    box-shadow: 0 20px 45px rgba(10, 61, 38, 0.18);
+    width: 240px;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.tt-polaroid-left {
+    transform: rotate(-5deg) translateY(12px);
+}
+
+.tt-polaroid-right {
+    transform: rotate(4deg) translateY(-12px);
+}
+
+.tt-polaroid:hover {
+    transform: rotate(0deg) translateY(-6px);
+    box-shadow: 0 25px 50px rgba(10, 61, 38, 0.25);
+    z-index: 3;
+}
+
+.tt-polaroid-img {
+    position: relative;
+    width: 100%;
+    height: 230px;
+    overflow: hidden;
+    border-radius: 3px;
+    background: #e5e7eb;
+}
+
+.tt-polaroid-caption {
+    margin-top: 12px;
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    line-height: 1.35;
+}
+
+/* 2. Our Story Section */
+.tt-story-section {
+    background-color: #0d3322;
+    color: #ffffff;
+    padding: 90px 0;
+}
+
+.tt-story-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.tt-story-text h2 {
+    color: #ffffff;
+    font-size: 2.8rem;
+    margin: 20px 0 22px;
+    font-weight: 700;
+}
+
+.tt-story-text p {
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+.tt-story-quote {
+    margin-top: 32px;
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 500;
+    color: #f3e5c0;
+    line-height: 1.3;
+    border-left: 3px solid var(--color-secondary);
+    padding-left: 20px;
+}
+
+.tt-story-image {
+    position: relative;
+    height: 480px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(197, 160, 89, 0.35);
+}
+
+/* 3. Cambodia Journey Split Section */
+.tt-cambodia-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 540px;
+    background-color: #0d3322;
+}
+
+.tt-split-image {
+    position: relative;
+    min-height: 420px;
+}
+
+.tt-split-content {
+    padding: 70px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #ffffff;
+    background: linear-gradient(160deg, #0f3b27 0%, #092519 100%);
+}
+
+.tt-split-content h2 {
+    color: #ffffff;
+    font-size: 2.6rem;
+    margin: 20px 0 22px;
+}
+
+.tt-split-content p {
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 1.02rem;
+    line-height: 1.75;
+    margin-bottom: 16px;
+}
+
+.tt-split-footer {
+    margin-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.tt-split-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 190px;
+}
+
+.tt-btn-outline-light {
+    display: inline-block;
+    text-align: center;
+    padding: 11px 26px;
+    border: 1.5px solid rgba(255, 255, 255, 0.8);
+    color: #ffffff;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.tt-btn-outline-light:hover {
+    background: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: #092519;
+}
+
+.tt-travel-icons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 22px;
+}
+
+.tt-travel-icon-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.tt-travel-icon-item svg {
+    color: var(--color-secondary);
+    flex-shrink: 0;
+}
+
+/* 4 & 6. Explore Cambodia / Explore Sri Lanka Photo Grids */
+.tt-explore-section {
+    padding: 85px 0;
+    background: #ffffff;
+}
+
+.tt-explore-alt {
+    background: #f8f7f3;
+}
+
+.tt-section-pill-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.tt-explore-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.tt-explore-card {
+    position: relative;
+    height: 410px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.tt-explore-card img {
+    transition: transform 0.55s ease;
+}
+
+.tt-explore-card:hover img {
+    transform: scale(1.06);
+}
+
+.tt-explore-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.05) 55%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 24px 16px;
+}
+
+.tt-card-label {
+    background: rgba(255, 255, 255, 0.94);
+    color: var(--color-primary);
+    padding: 9px 22px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.25s ease;
+}
+
+.tt-explore-card:hover .tt-card-label {
+    background: var(--color-secondary);
+    color: #ffffff;
+}
+
+/* 5. Our Values Section */
+.tt-values-section {
+    padding: 85px 0;
+    background: #ffffff;
+    border-top: 1px solid #f0ede4;
+    border-bottom: 1px solid #f0ede4;
+}
+
+.tt-values-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 45px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.tt-values-header h2 {
+    font-size: 2.8rem;
+    color: var(--color-primary);
+    font-weight: 800;
+}
+
+.tt-values-header p {
+    color: #6b7280;
+    max-width: 460px;
+    font-size: 1rem;
+}
+
+.tt-values-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 22px;
+}
+
+.tt-value-card {
+    background: #fbfaf7;
+    border: 1px solid #ece7da;
+    border-radius: 12px;
+    padding: 28px 20px;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.tt-value-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-secondary);
+    box-shadow: 0 14px 30px rgba(10, 61, 38, 0.08);
+}
+
+.tt-value-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: rgba(10, 61, 38, 0.08);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.tt-value-card h3 {
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.tt-value-card p {
+    font-size: 0.92rem;
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+/* 7. LUXURY Section */
+.tt-luxury-section {
+    background: linear-gradient(180deg, #0d3322 0%, #082317 100%);
+    color: #ffffff;
+    padding: 95px 0;
+}
+
+.tt-luxury-header {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 55px;
+}
+
+.tt-luxury-header p {
+    margin-top: 24px;
+    font-size: 1.08rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.tt-luxury-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+.tt-luxury-card {
+    background: #ffffff;
+    color: var(--color-text-dark);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.tt-luxury-card:hover {
+    transform: translateY(-6px);
+}
+
+.tt-luxury-img {
+    position: relative;
+    height: 310px;
+    width: 100%;
+}
+
+.tt-luxury-body {
+    padding: 28px 30px 32px;
+}
+
+.tt-luxury-body h3 {
+    font-size: 1.35rem;
+    color: var(--color-primary);
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.tt-luxury-body p {
+    color: #4b5563;
+    font-size: 0.98rem;
+    line-height: 1.7;
+}
+
+/* 8. Discover Asia Section */
+.tt-asia-section {
+    padding: 85px 0;
+    background: #ffffff;
+}
+
+.tt-asia-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+}
+
+.tt-asia-card {
+    position: relative;
+    height: 430px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+}
+
+.tt-asia-card img {
+    transition: transform 0.6s ease;
+}
+
+.tt-asia-card:hover img {
+    transform: scale(1.08);
+}
+
+.tt-asia-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(7, 31, 20, 0.82) 0%, rgba(0, 0, 0, 0.08) 50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 24px 12px;
+    text-align: center;
+}
+
+.tt-asia-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    font-style: italic;
+}
+
+.tt-asia-tag {
+    margin-top: 6px;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--color-secondary);
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: all 0.25s ease;
+}
+
+.tt-asia-card:hover .tt-asia-tag {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 9. Our Services (Travels & Tours) */
+.tt-services-section {
+    background: #0d3322;
+    color: #ffffff;
+    padding: 90px 0;
+}
+
+.tt-services-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+}
+
+.tt-service-card {
+    background: #ffffff;
+    color: var(--color-text-dark);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.tt-service-card:hover {
+    transform: translateY(-6px);
+}
+
+.tt-service-img {
+    position: relative;
+    height: 170px;
+    width: 100%;
+    background: #e5e7eb;
+}
+
+.tt-service-body {
+    padding: 20px 18px 24px;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tt-service-body h3 {
+    font-size: 1.15rem;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.tt-service-body p {
+    font-size: 0.88rem;
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+.tt-book-now-wrap {
+    text-align: center;
+    margin-top: 45px;
+}
+
+/* 10. Bottom Contact / CTA Banner + Inquiry Form */
+.tt-contact-banner {
+    position: relative;
+    padding: 95px 0;
+    color: #ffffff;
+    background: #1a120b;
+    overflow: hidden;
+}
+
+.tt-contact-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.tt-contact-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(10, 35, 24, 0.9) 0%, rgba(15, 25, 20, 0.72) 55%, rgba(10, 25, 18, 0.85) 100%);
+}
+
+.tt-contact-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.tt-contact-copy h2 {
+    color: #ffffff;
+    font-size: 2.9rem;
+    line-height: 1.15;
+    margin-bottom: 28px;
+    font-weight: 800;
+}
+
+.tt-contact-details {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.tt-contact-block h4 {
+    color: var(--color-secondary);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
+}
+
+.tt-contact-block a {
+    color: #ffffff;
+    font-size: 1.15rem;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.tt-social-row {
+    display: flex;
+    gap: 14px;
+    margin-top: 8px;
+}
+
+.tt-social-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    transition: all 0.25s ease;
+}
+
+.tt-social-btn:hover {
+    background: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: #092519;
+}
+
+.tt-inquiry-card {
+    background: rgba(255, 255, 255, 0.96);
+    color: var(--color-text-dark);
+    padding: 34px;
+    border-radius: 14px;
+    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.35);
+}
+
+.tt-inquiry-card h3 {
+    color: var(--color-primary);
+    font-size: 1.55rem;
+    margin-bottom: 8px;
+}
+
+.tt-inquiry-card .tt-form-sub {
+    color: #6b7280;
+    font-size: 0.92rem;
+    margin-bottom: 22px;
+}
+
+.tt-form-group {
+    margin-bottom: 16px;
+}
+
+.tt-form-group label {
+    display: block;
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 6px;
+}
+
+.tt-form-group input,
+.tt-form-group select,
+.tt-form-group textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: #111827;
+    background: #ffffff;
+}
+
+.tt-form-group input:focus,
+.tt-form-group select:focus,
+.tt-form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.2);
+}
+
+.tt-form-success {
+    margin-top: 14px;
+    padding: 12px;
+    border-radius: 6px;
+    background: #ecfdf5;
+    color: #065f46;
+    font-weight: 600;
+    text-align: center;
+    font-size: 0.92rem;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1100px) {
+    .tt-values-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .tt-services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .tt-asia-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .tt-asia-card {
+        height: 320px;
+    }
+}
+
+@media (max-width: 992px) {
+    .tt-hero-grid,
+    .tt-story-grid,
+    .tt-cambodia-split,
+    .tt-luxury-grid,
+    .tt-contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tt-explore-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tt-split-content {
+        padding: 50px 24px;
+    }
+
+    .tt-story-image {
+        height: 360px;
+    }
+}
+
+@media (max-width: 640px) {
+    .tt-hero-content h1 {
+        font-size: 2.3rem;
+    }
+
+    .tt-polaroid-cluster {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .tt-polaroid {
+        width: 100%;
+        max-width: 280px;
+        transform: none;
+    }
+
+    .tt-explore-grid,
+    .tt-values-grid,
+    .tt-services-grid,
+    .tt-asia-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tt-explore-card {
+        height: 300px;
+    }
+
+    .tt-story-text h2,
+    .tt-split-content h2,
+    .tt-contact-copy h2 {
+        font-size: 2rem;
+    }
+
+    .tt-story-quote {
+        font-size: 1.45rem;
+    }
+}
+
